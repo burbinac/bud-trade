@@ -10,14 +10,14 @@ const TILES = [
     body: 'Commission begins on deposit. Balance due prior to shipping. Each piece held exclusively.',
   },
   {
-    n: 'White-Glove',
-    title: 'Door-to-Door Delivery',
-    body: 'ArcBest or Plycon to site. Room of choice, all packaging removed. CAFTA-DR duty-free.',
+    n: 'Delivery',
+    title: 'Quoted Separately',
+    body: 'White-glove freight (ArcBest or Plycon) available on quote, or use your own preferred delivery partner from Laurens, SC.',
   },
   {
     n: '13–15',
-    title: 'Week Lead Time',
-    body: 'Design through fabrication through delivery. Full spec sheets provided at inquiry.',
+    title: 'Week Production',
+    body: 'Commission to ship-ready, from the Laurens workshop. Delivery scheduled separately once the piece is finished.',
   },
 ];
 

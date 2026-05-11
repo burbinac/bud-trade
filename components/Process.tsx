@@ -64,9 +64,9 @@ const GROUPS: CountryGroup[] = [
       },
       {
         n: '06',
-        title: 'Deliver',
-        location: 'To site',
-        body: 'White-glove freight, room of choice, duty-free.',
+        title: 'Ship',
+        location: 'From Laurens, SC',
+        body: 'White-glove freight quoted on request, or arrange your own preferred carrier from the workshop.',
       },
     ],
   },
@@ -85,8 +85,8 @@ export function Process() {
 
       <div className="mx-auto max-w-[820px] px-6 pb-10 text-center sm:px-10">
         <p className="text-[15px] font-normal leading-[1.7] text-[rgba(242,237,227,0.9)] md:text-[16px]">
-          From the forest in Guanacaste to a dining room in the United States —
-          <span className="text-[var(--gold)]"> thirteen to fifteen weeks, six stages, one person overseeing every one.</span>
+          From the forest in Guanacaste to the Laurens workshop —
+          <span className="text-[var(--gold)]"> thirteen to fifteen weeks of production, six stages, one person overseeing every one.</span>
         </p>
       </div>
 

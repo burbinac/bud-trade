@@ -50,7 +50,7 @@ export function Hero() {
         <div className="anim-up flex flex-row gap-8 md:flex-col md:items-end md:gap-7 md:pb-1.5 [animation-delay:1s]">
           <Stat n="9" label="One-of-a-kind slabs" />
           <Stat n="WG" label="White-glove delivery" />
-          <Stat n="13–15" label="Week lead time" />
+          <Stat n="13–15" label="Week production" />
         </div>
       </div>
     </section>
