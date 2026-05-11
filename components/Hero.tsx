@@ -16,9 +16,9 @@ export function Hero() {
           <h1
             className="anim-up mt-4 font-[family-name:var(--font-cormorant)] text-[clamp(48px,9vw,96px)] font-normal uppercase leading-[0.92] tracking-[0.03em] text-[var(--cream)] [animation-delay:0.6s]"
           >
-            Designer
+            One Tree.
             <br />
-            Tables
+            One Table.
           </h1>
           <div className="anim-up mt-6 text-[12px] font-light uppercase leading-[1.9] tracking-[0.18em] text-[rgba(242,237,227,0.85)] [animation-delay:0.8s] sm:text-[13px] md:text-[14px]">
             Costa Rican Hardwood &nbsp;·&nbsp; Double Kiln-Dried

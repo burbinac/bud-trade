@@ -13,6 +13,9 @@ export function Collection({ onInquire }: Props) {
 
   return (
     <div className="mx-auto max-w-[1440px] px-6 pb-20 sm:px-10 md:px-12">
+      <p className="mx-auto mb-10 max-w-[640px] text-center text-[11px] font-normal italic leading-[1.7] tracking-[0.04em] text-[rgba(242,237,227,0.6)] md:text-[12px]">
+        Tables shown are renderings. Each piece is made on commission — slab photography sent with the spec sheet once a commission begins.
+      </p>
       <div className="grid grid-cols-12 gap-6">
         {SLABS.map((slab, i) => (
           <Card
