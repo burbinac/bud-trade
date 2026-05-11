@@ -106,7 +106,7 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
         <Field label="Firm / Studio" name="firm" placeholder="Your studio name" required />
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="slab" className="text-[9px] font-normal uppercase tracking-[0.22em] text-[var(--gold)]">
+          <label htmlFor="slab" className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
             Slab of interest
           </label>
           <select
@@ -142,7 +142,7 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
               <Field label="Last Name" name="lastName" placeholder="Last" />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="context" className="text-[9px] font-normal uppercase tracking-[0.22em] text-[var(--gold)]">
+              <label htmlFor="context" className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
                 Project context
               </label>
               <textarea
@@ -205,7 +205,7 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={name} className="text-[9px] font-normal uppercase tracking-[0.22em] text-[var(--gold)]">
+      <label htmlFor={name} className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
         {label}
       </label>
       <input

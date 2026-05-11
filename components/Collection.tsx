@@ -101,13 +101,13 @@ function Card({
         </div>
 
         <div className="px-6 pb-6 pt-5">
-          <div className="mb-2 text-[8px] font-normal uppercase tracking-[0.22em] text-[var(--gold)]">
+          <div className="mb-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
             {slab.tag}
           </div>
           <div className={`mb-2 font-[family-name:var(--font-cormorant)] font-normal leading-none text-[var(--cream)] ${featured ? 'text-[40px] md:text-[48px]' : 'text-[26px]'}`}>
             {slab.name}
           </div>
-          <div className="mb-4 text-[11px] font-normal tracking-[0.06em] text-[rgba(242,237,227,0.7)]">
+          <div className="mb-4 text-[12px] font-medium tracking-[0.06em] text-[rgba(242,237,227,0.85)]">
             <span>{slab.wood}</span>
             <span className="mx-1.5 text-[var(--gold-dim)]">·</span>
             <span>{slab.length}</span>
@@ -115,13 +115,13 @@ function Card({
             <span>{slab.seats}</span>
           </div>
           <div className="flex items-center justify-between border-t border-[var(--gold-dim)] pt-4">
-            <span className="text-[9px] font-normal uppercase tracking-[0.16em] text-[rgba(242,237,227,0.85)]">
+            <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-[rgba(242,237,227,0.9)]">
               Inquire for pricing
             </span>
             <button
               type="button"
               onClick={handle}
-              className="inline-flex items-center justify-center rounded-full border border-[rgba(242,237,227,0.3)] bg-transparent px-5 py-2.5 text-[9px] font-normal uppercase tracking-[0.2em] text-[var(--cream)] transition-colors hover:border-[var(--gold)] hover:text-[var(--gold)]"
+              className="inline-flex items-center justify-center rounded-full border border-[rgba(242,237,227,0.3)] bg-transparent px-5 py-2.5 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--cream)] transition-colors hover:border-[var(--gold)] hover:text-[var(--gold)]"
             >
               Request Spec Sheet →
             </button>

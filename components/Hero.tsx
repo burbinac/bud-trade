@@ -20,7 +20,7 @@ export function Hero() {
             <br />
             One Table.
           </h1>
-          <div className="anim-up mt-6 text-[12px] font-light uppercase leading-[1.9] tracking-[0.18em] text-[rgba(242,237,227,0.85)] [animation-delay:0.8s] sm:text-[13px] md:text-[14px]">
+          <div className="anim-up mt-6 text-[12px] font-medium uppercase leading-[1.9] tracking-[0.18em] text-[rgba(242,237,227,0.85)] [animation-delay:0.8s] sm:text-[13px] md:text-[14px]">
             Costa Rican Hardwood &nbsp;·&nbsp; Double Kiln-Dried
             <br />
             Finished in the United States &nbsp;·&nbsp; One of each will ever exist
@@ -37,7 +37,7 @@ export function Hero() {
             </a>
             <a
               href="#collection"
-              className="group inline-flex items-center gap-2 text-[10px] font-normal uppercase tracking-[0.22em] text-[var(--cream)] transition-colors hover:text-[var(--gold)]"
+              className="group inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--cream)] transition-colors hover:text-[var(--gold)]"
             >
               View Collection
               <span aria-hidden className="transition-transform group-hover:translate-y-0.5">
@@ -63,7 +63,7 @@ function Stat({ n, label }: { n: string; label: string }) {
       <div className="font-[family-name:var(--font-cormorant)] text-4xl font-normal leading-none text-[var(--gold)] md:text-[42px]">
         {n}
       </div>
-      <div className="mt-1 text-[8px] font-light uppercase tracking-[0.2em] text-[rgba(242,237,227,0.7)]">
+      <div className="mt-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-[rgba(242,237,227,0.85)]">
         {label}
       </div>
     </div>

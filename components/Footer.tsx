@@ -8,7 +8,7 @@ export function Footer() {
             alt="BUD"
             className="mb-4 h-7 w-auto"
           />
-          <div className="mb-3 text-[10px] font-normal uppercase tracking-[0.22em] text-[var(--cream)]">
+          <div className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--cream)]">
             Bernardo Urbina Design
           </div>
           <p className="max-w-[260px] text-[12px] font-normal leading-[1.8] text-[rgba(242,237,227,0.7)]">
@@ -18,7 +18,7 @@ export function Footer() {
         </div>
 
         <div>
-          <div className="mb-4 text-[9px] font-normal uppercase tracking-[0.22em] text-[var(--gold)]">
+          <div className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
             Trade
           </div>
           <ul className="flex flex-col gap-2.5 text-[12px] font-normal text-[rgba(242,237,227,0.85)]">
@@ -41,7 +41,7 @@ export function Footer() {
         </div>
 
         <div>
-          <div className="mb-4 text-[9px] font-normal uppercase tracking-[0.22em] text-[var(--gold)]">
+          <div className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
             Contact
           </div>
           <ul className="flex flex-col gap-2.5 text-[12px] font-normal text-[rgba(242,237,227,0.85)]">
@@ -65,7 +65,7 @@ export function Footer() {
         </div>
 
         <div>
-          <div className="mb-4 text-[9px] font-normal uppercase tracking-[0.22em] text-[var(--gold)]">
+          <div className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
             Studios
           </div>
           <ul className="flex flex-col gap-2.5 text-[12px] font-normal text-[rgba(242,237,227,0.85)]">
@@ -77,10 +77,10 @@ export function Footer() {
 
       <div className="border-t border-[var(--gold-dim)]">
         <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-3 px-6 py-6 sm:flex-row sm:px-10 md:px-16 lg:px-[72px]">
-          <div className="text-[9px] font-light uppercase tracking-[0.18em] text-[rgba(242,237,227,0.55)]">
+          <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-[rgba(242,237,227,0.75)]">
             © 2026 Bernardo Urbina Design
           </div>
-          <div className="text-[9px] font-light uppercase tracking-[0.18em] text-[rgba(242,237,227,0.55)]">
+          <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-[rgba(242,237,227,0.75)]">
             CAFTA-DR Duty-Free · MINAE Permit Harvest
           </div>
         </div>
