@@ -86,7 +86,7 @@ export function Process() {
       <div className="mx-auto max-w-[820px] px-6 pb-10 text-center sm:px-10">
         <p className="text-[15px] font-normal leading-[1.7] text-[rgba(242,237,227,0.9)] md:text-[16px]">
           From the forest in Guanacaste to a dining room in the United States —
-          <span className="text-[var(--gold)]"> sixteen to twenty weeks, six stages, one person overseeing every one.</span>
+          <span className="text-[var(--gold)]"> thirteen to fifteen weeks, six stages, one person overseeing every one.</span>
         </p>
       </div>
 

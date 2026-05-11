@@ -15,7 +15,7 @@ const TILES = [
     body: 'ArcBest or Plycon to site. Room of choice, all packaging removed. CAFTA-DR duty-free.',
   },
   {
-    n: '16–20',
+    n: '13–15',
     title: 'Week Lead Time',
     body: 'Design through fabrication through delivery. Full spec sheets provided at inquiry.',
   },
