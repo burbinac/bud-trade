@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Intro } from '@/components/Intro';
 import { SectionLabel } from '@/components/SectionLabel';
@@ -20,6 +21,7 @@ export default function Page() {
 
   return (
     <main className="flex-1">
+      <Header />
       <Hero />
       <Intro />
       <SectionLabel id="collection">The Collection</SectionLabel>
