@@ -30,7 +30,7 @@ export function TradeProgram() {
             key={t.title}
             className="rounded-2xl bg-[var(--ink-2)] px-8 py-10"
           >
-            <div className="mb-3 font-[family-name:var(--font-cormorant)] text-[clamp(32px,3.6vw,44px)] font-normal leading-none text-[var(--gold)]">
+            <div className="mb-3 whitespace-nowrap font-[family-name:var(--font-cormorant)] text-[clamp(28px,3.2vw,40px)] font-normal leading-none text-[var(--gold)]">
               {t.n}
             </div>
             <div className="mb-3 text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--cream)]">

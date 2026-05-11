@@ -8,9 +8,12 @@ type Props = {
 };
 
 export function Collection({ onInquire }: Props) {
+  const lastIndex = SLABS.length - 1;
+  const penultimateIndex = SLABS.length - 2;
+
   return (
     <div className="mx-auto max-w-[1440px] px-6 pb-20 sm:px-10 md:px-12">
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-12 gap-6">
         {SLABS.map((slab, i) => (
           <Card
             key={slab.slug}
@@ -18,7 +21,8 @@ export function Collection({ onInquire }: Props) {
             index={i}
             onInquire={onInquire}
             featured={i === 0}
-            orphan={i === SLABS.length - 1}
+            bottomPairLeft={i === penultimateIndex}
+            bottomPairRight={i === lastIndex}
           />
         ))}
       </div>
@@ -30,13 +34,15 @@ function Card({
   slab,
   index,
   featured,
-  orphan,
+  bottomPairLeft,
+  bottomPairRight,
   onInquire,
 }: {
   slab: Slab;
   index: number;
   featured: boolean;
-  orphan: boolean;
+  bottomPairLeft: boolean;
+  bottomPairRight: boolean;
   onInquire: (n: string) => void;
 }) {
   const ref = useRef<HTMLElement | null>(null);
@@ -59,20 +65,22 @@ function Card({
 
   const handle = () => onInquire(slab.name);
 
+  const spanClasses = featured
+    ? 'col-span-12'
+    : bottomPairLeft
+      ? 'col-span-12 sm:col-span-6 lg:col-span-4 lg:col-start-3'
+      : bottomPairRight
+        ? 'col-span-12 sm:col-span-6 lg:col-span-4'
+        : 'col-span-12 sm:col-span-6 lg:col-span-4';
+
   return (
     <article
       ref={ref}
       style={{ transitionDelay: `${Math.min(index, 5) * 60}ms` }}
-      className={`group translate-y-4 opacity-0 transition-all duration-700 ease-out [&.in-view]:translate-y-0 [&.in-view]:opacity-100 ${
-        featured ? 'lg:col-span-2' : ''
-      } ${
-        orphan
-          ? 'sm:col-span-2 sm:mx-auto sm:max-w-[calc(50%-12px)] lg:col-span-1 lg:col-start-2 lg:mx-0 lg:max-w-none'
-          : ''
-      }`}
+      className={`group translate-y-4 opacity-0 transition-all duration-700 ease-out [&.in-view]:translate-y-0 [&.in-view]:opacity-100 ${spanClasses}`}
     >
       <div className="overflow-hidden rounded-2xl bg-[var(--ink-2)] transition-transform duration-300 hover:-translate-y-1">
-        <div className={`relative overflow-hidden ${featured ? 'aspect-[16/9]' : 'aspect-[3/2]'}`}>
+        <div className={`relative overflow-hidden ${featured ? 'aspect-[21/9]' : 'aspect-[3/2]'}`}>
           <img
             src={slab.image}
             alt={slab.name}
@@ -93,7 +101,7 @@ function Card({
           <div className="mb-2 text-[8px] font-normal uppercase tracking-[0.22em] text-[var(--gold)]">
             {slab.tag}
           </div>
-          <div className={`mb-2 font-[family-name:var(--font-cormorant)] font-normal leading-none text-[var(--cream)] ${featured ? 'text-[36px]' : 'text-[26px]'}`}>
+          <div className={`mb-2 font-[family-name:var(--font-cormorant)] font-normal leading-none text-[var(--cream)] ${featured ? 'text-[40px] md:text-[48px]' : 'text-[26px]'}`}>
             {slab.name}
           </div>
           <div className="mb-4 text-[11px] font-normal tracking-[0.06em] text-[rgba(242,237,227,0.7)]">
