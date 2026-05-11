@@ -7,7 +7,7 @@ const TILES = [
   {
     n: '50%',
     title: 'Deposit to Secure',
-    body: 'Commission begins on deposit. Balance due at delivery. Each piece held exclusively.',
+    body: 'Commission begins on deposit. Balance due prior to shipping. Each piece held exclusively.',
   },
   {
     n: 'WG',

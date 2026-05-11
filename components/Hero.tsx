@@ -20,7 +20,7 @@ export function Hero() {
             <br />
             Tables
           </h1>
-          <div className="anim-up mt-6 text-[10px] font-light uppercase leading-[2.2] tracking-[0.18em] text-[rgba(242,237,227,0.7)] [animation-delay:0.8s]">
+          <div className="anim-up mt-6 text-[12px] font-light uppercase leading-[1.9] tracking-[0.18em] text-[rgba(242,237,227,0.85)] [animation-delay:0.8s] sm:text-[13px] md:text-[14px]">
             Costa Rican Hardwood &nbsp;·&nbsp; Double Kiln-Dried
             <br />
             Finished in the United States &nbsp;·&nbsp; One of each will ever exist
