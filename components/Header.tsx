@@ -20,10 +20,10 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 backdrop-blur-md ${
         scrolled
-          ? 'border-b border-[var(--gold-dim)] bg-[rgba(8,7,5,0.9)] backdrop-blur-md'
-          : 'border-b border-transparent bg-gradient-to-b from-[rgba(8,7,5,0.75)] via-[rgba(8,7,5,0.45)] to-transparent'
+          ? 'border-b border-[var(--gold-dim)] bg-[rgba(8,7,5,0.55)]'
+          : 'border-b border-transparent bg-[rgba(8,7,5,0.3)]'
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between px-6 sm:h-20 sm:px-10 md:h-[88px] md:px-16 lg:px-[72px]">
