@@ -125,16 +125,16 @@ function StepBlock({
       className="translate-y-6 opacity-0 transition-all duration-700 ease-out [&.in-view]:translate-y-0 [&.in-view]:opacity-100"
     >
       {hasImage ? (
-        <div className="grid grid-cols-1 gap-8 py-10 md:grid-cols-[5fr_6fr] md:gap-14 md:py-14">
+        <div className="grid grid-cols-1 gap-8 py-10 md:grid-cols-[4fr_5fr] md:gap-12 md:py-12">
           <div className={`relative overflow-hidden rounded-2xl bg-[rgba(8,7,5,0.4)] ${reverse ? 'md:order-2' : ''}`}>
-            <div className="relative aspect-[4/5]">
+            <div className="relative aspect-[4/3]">
               <img
                 src={step.image}
                 alt={`${step.title} — ${step.location}`}
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(8,7,5,0.55)] via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 font-[family-name:var(--font-cormorant)] text-[clamp(56px,8vw,96px)] font-normal leading-[0.85] text-[var(--cream)] drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)]">
+              <div className="absolute bottom-4 left-5 font-[family-name:var(--font-cormorant)] text-[clamp(44px,5.5vw,72px)] font-normal leading-[0.85] text-[var(--cream)] drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)]">
                 {step.n}
               </div>
             </div>
