@@ -36,7 +36,7 @@ const STEPS: Step[] = [
     n: '04',
     title: 'Re-Kiln',
     location: 'Laurens, SC',
-    body: 'Second kiln to US interior moisture. Aspen to Miami stable.',
+    body: 'iDry vacuum kiln calibrated to US interior moisture. Aspen to Miami stable.',
     image: '/process/rekiln.jpg',
   },
   {
