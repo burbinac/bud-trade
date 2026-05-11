@@ -30,13 +30,13 @@ export function TradeProgram() {
             key={t.title}
             className="rounded-2xl bg-[var(--ink-2)] px-8 py-10"
           >
-            <div className="mb-3 font-[family-name:var(--font-cormorant)] text-[44px] font-light leading-none text-[var(--gold)]">
+            <div className="mb-3 font-[family-name:var(--font-cormorant)] text-[44px] font-normal leading-none text-[var(--gold)]">
               {t.n}
             </div>
             <div className="mb-3 text-[10px] font-normal uppercase tracking-[0.18em] text-[var(--cream)]">
               {t.title}
             </div>
-            <div className="text-[12px] font-light leading-[1.8] text-[rgba(242,237,227,0.7)]">
+            <div className="text-[12px] font-normal leading-[1.8] text-[rgba(242,237,227,0.7)]">
               {t.body}
             </div>
           </div>

@@ -71,14 +71,14 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
 
   return (
     <section id="inquiry" className="mx-auto max-w-[600px] px-6 py-24 text-center sm:px-10">
-      <div className="mb-5 text-[9px] font-light uppercase tracking-[0.3em] text-[var(--gold)]">
+      <div className="mb-5 text-[9px] font-normal uppercase tracking-[0.3em] text-[var(--gold)]">
         Request Access
       </div>
       <div className="mx-auto mb-7 h-px w-12 bg-[var(--gold)]" />
-      <h2 className="mb-4 font-[family-name:var(--font-cormorant)] text-[clamp(32px,5vw,56px)] font-light text-[var(--cream)]">
+      <h2 className="mb-4 font-[family-name:var(--font-cormorant)] text-[clamp(32px,5vw,56px)] font-normal text-[var(--cream)]">
         Request Spec Sheets
       </h2>
-      <p className="mx-auto mb-12 max-w-md text-[12px] font-light leading-[2] text-[rgba(242,237,227,0.7)]">
+      <p className="mx-auto mb-12 max-w-md text-[12px] font-normal leading-[2] text-[rgba(242,237,227,0.7)]">
         We&apos;ll send the full 12-page trade catalog within one business day — dimensions, slab
         photography, base options, and trade pricing for all nine pieces.
       </p>
@@ -119,7 +119,7 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
             name="slab"
             value={selectedSlab}
             onChange={(e) => onSlabChange(e.target.value)}
-            className="appearance-none rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-light text-[var(--cream)] outline-none transition-colors focus:border-[var(--gold)]"
+            className="appearance-none rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors focus:border-[var(--gold)]"
           >
             <option value="">— Full catalog (all nine slabs)</option>
             {SLABS.map((s) => (
@@ -139,7 +139,7 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
             name="context"
             placeholder="Residential, hospitality, timeline…"
             rows={3}
-            className="min-h-[88px] resize-y rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-light text-[var(--cream)] outline-none transition-colors placeholder:text-[rgba(242,237,227,0.3)] focus:border-[var(--gold)]"
+            className="min-h-[88px] resize-y rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors placeholder:text-[rgba(242,237,227,0.3)] focus:border-[var(--gold)]"
           />
         </div>
 
@@ -201,7 +201,7 @@ function Field({
         type={type}
         placeholder={placeholder}
         required={required}
-        className="rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-light text-[var(--cream)] outline-none transition-colors placeholder:text-[rgba(242,237,227,0.3)] focus:border-[var(--gold)]"
+        className="rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors placeholder:text-[rgba(242,237,227,0.3)] focus:border-[var(--gold)]"
       />
     </div>
   );

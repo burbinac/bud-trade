@@ -29,7 +29,7 @@ body {
   background: var(--ink);
   color: var(--cream);
   font-family: var(--font-jost), sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

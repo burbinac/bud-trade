@@ -10,22 +10,22 @@ export function Hero() {
 
       <div className="relative z-10 flex w-full flex-col gap-12 px-6 pb-12 sm:px-10 sm:pb-16 md:flex-row md:items-end md:justify-between md:px-16 md:pb-20 lg:px-[72px]">
         <div className="max-w-2xl">
-          <div className="anim-up text-[10px] font-light uppercase tracking-[0.32em] text-[var(--gold)] [animation-delay:0.4s] sm:text-[9px]">
+          <div className="anim-up text-[10px] font-normal uppercase tracking-[0.32em] text-[var(--gold)] [animation-delay:0.4s] sm:text-[9px]">
             Trade Collection — 2026
           </div>
           <h1
-            className="anim-up mt-4 font-[family-name:var(--font-cormorant)] text-[clamp(48px,9vw,96px)] font-light uppercase leading-[0.92] tracking-[0.03em] text-[var(--cream)] [animation-delay:0.6s]"
+            className="anim-up mt-4 font-[family-name:var(--font-cormorant)] text-[clamp(48px,9vw,96px)] font-normal uppercase leading-[0.92] tracking-[0.03em] text-[var(--cream)] [animation-delay:0.6s]"
           >
             Designer
             <br />
             Tables
           </h1>
-          <div className="anim-up mt-6 text-[10px] font-extralight uppercase leading-[2.2] tracking-[0.18em] text-[rgba(242,237,227,0.7)] [animation-delay:0.8s]">
+          <div className="anim-up mt-6 text-[10px] font-light uppercase leading-[2.2] tracking-[0.18em] text-[rgba(242,237,227,0.7)] [animation-delay:0.8s]">
             Costa Rican Hardwood &nbsp;·&nbsp; Double Kiln-Dried
             <br />
             Finished in the United States &nbsp;·&nbsp; One of each will ever exist
           </div>
-          <div className="anim-up mt-5 font-[family-name:var(--font-cormorant)] text-base font-light tracking-[0.1em] text-[var(--gold)] [animation-delay:0.9s]">
+          <div className="anim-up mt-5 font-[family-name:var(--font-cormorant)] text-base font-normal tracking-[0.1em] text-[var(--gold)] [animation-delay:0.9s]">
             Trade pricing on approval
           </div>
           <div className="anim-up mt-8 flex flex-wrap gap-3 [animation-delay:1s]">
@@ -57,10 +57,10 @@ export function Hero() {
 function Stat({ n, label }: { n: string; label: string }) {
   return (
     <div className="md:text-right">
-      <div className="font-[family-name:var(--font-cormorant)] text-4xl font-light leading-none text-[var(--gold)] md:text-[42px]">
+      <div className="font-[family-name:var(--font-cormorant)] text-4xl font-normal leading-none text-[var(--gold)] md:text-[42px]">
         {n}
       </div>
-      <div className="mt-1 text-[8px] font-extralight uppercase tracking-[0.2em] text-[rgba(242,237,227,0.7)]">
+      <div className="mt-1 text-[8px] font-light uppercase tracking-[0.2em] text-[rgba(242,237,227,0.7)]">
         {label}
       </div>
     </div>
