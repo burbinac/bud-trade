@@ -28,18 +28,21 @@ export function Hero() {
           <div className="anim-up mt-5 font-[family-name:var(--font-cormorant)] text-base font-normal tracking-[0.1em] text-[var(--gold)] [animation-delay:0.9s]">
             Trade pricing on approval
           </div>
-          <div className="anim-up mt-8 flex flex-wrap gap-3 [animation-delay:1s]">
-            <a
-              href="#collection"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-7 py-3 text-[9px] font-normal uppercase tracking-[0.2em] text-[var(--ink)] shadow-[0_4px_20px_rgba(196,154,74,0.25)] transition-all duration-200 hover:-translate-y-px hover:bg-[var(--gold-hover)]"
-            >
-              View Collection
-            </a>
+          <div className="anim-up mt-8 flex flex-wrap items-center gap-6 [animation-delay:1s]">
             <a
               href="#inquiry"
-              className="inline-flex items-center justify-center rounded-full border border-[rgba(242,237,227,0.3)] bg-transparent px-7 py-3 text-[9px] font-normal uppercase tracking-[0.2em] text-[var(--cream)] transition-colors hover:border-[var(--gold)] hover:text-[var(--gold)]"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-7 py-3 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--ink)] shadow-[0_4px_20px_rgba(196,154,74,0.25)] transition-all duration-200 hover:-translate-y-px hover:bg-[var(--gold-hover)]"
             >
               Request Spec Sheets
+            </a>
+            <a
+              href="#collection"
+              className="group inline-flex items-center gap-2 text-[10px] font-normal uppercase tracking-[0.22em] text-[var(--cream)] transition-colors hover:text-[var(--gold)]"
+            >
+              View Collection
+              <span aria-hidden className="transition-transform group-hover:translate-y-0.5">
+                ↓
+              </span>
             </a>
           </div>
         </div>

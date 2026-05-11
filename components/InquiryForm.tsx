@@ -13,6 +13,7 @@ type Props = {
 export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [showOptional, setShowOptional] = useState(false);
 
   useEffect(() => {
     if (status === 'error') {
@@ -29,7 +30,6 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
     const data = new FormData(form);
 
     if (data.get('company_website')) {
-      // Honeypot tripped — silently "succeed" to avoid signaling.
       setStatus('sent');
       return;
     }
@@ -42,12 +42,12 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          firstName: data.get('firstName'),
-          lastName: data.get('lastName'),
+          firstName: data.get('firstName') || '',
+          lastName: data.get('lastName') || '',
           firm: data.get('firm'),
           email: data.get('email'),
           slab: data.get('slab'),
-          context: data.get('context'),
+          context: data.get('context') || '',
         }),
       });
 
@@ -78,13 +78,12 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
       <h2 className="mb-4 font-[family-name:var(--font-cormorant)] text-[clamp(32px,5vw,56px)] font-normal text-[var(--cream)]">
         Request Spec Sheets
       </h2>
-      <p className="mx-auto mb-12 max-w-md text-[12px] font-normal leading-[2] text-[rgba(242,237,227,0.7)]">
-        We&apos;ll send the full 12-page trade catalog within one business day — dimensions, slab
+      <p className="mx-auto mb-10 max-w-md text-[13px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)]">
+        We&apos;ll send the 12-page trade catalog within one business day — dimensions, slab
         photography, base options, and trade pricing for all nine pieces.
       </p>
 
       <form className="flex flex-col gap-4 text-left" onSubmit={handleSubmit} noValidate>
-        {/* Honeypot — hidden from humans, bots tend to fill it */}
         <div className="absolute -left-[9999px]" aria-hidden="true">
           <label>
             Website
@@ -97,18 +96,14 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
           </label>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <Field label="First Name" name="firstName" placeholder="First" required />
-          <Field label="Last Name" name="lastName" placeholder="Last" required />
-        </div>
-        <Field label="Firm / Studio" name="firm" placeholder="Your studio name" required />
         <Field
-          label="Email"
+          label="Work Email"
           name="email"
           type="email"
           placeholder="you@studio.com"
           required
         />
+        <Field label="Firm / Studio" name="firm" placeholder="Your studio name" required />
 
         <div className="flex flex-col gap-2">
           <label htmlFor="slab" className="text-[9px] font-normal uppercase tracking-[0.22em] text-[var(--gold)]">
@@ -130,23 +125,41 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
           </select>
         </div>
 
-        <div className="flex flex-col gap-2">
-          <label htmlFor="context" className="text-[9px] font-normal uppercase tracking-[0.22em] text-[var(--gold)]">
-            Project context
-          </label>
-          <textarea
-            id="context"
-            name="context"
-            placeholder="Residential, hospitality, timeline…"
-            rows={3}
-            className="min-h-[88px] resize-y rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors placeholder:text-[rgba(242,237,227,0.3)] focus:border-[var(--gold)]"
-          />
-        </div>
+        {!showOptional && (
+          <button
+            type="button"
+            onClick={() => setShowOptional(true)}
+            className="self-center text-[10px] font-normal uppercase tracking-[0.22em] text-[rgba(242,237,227,0.6)] transition-colors hover:text-[var(--gold)]"
+          >
+            + Add project details (optional)
+          </button>
+        )}
+
+        {showOptional && (
+          <>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <Field label="First Name" name="firstName" placeholder="First" />
+              <Field label="Last Name" name="lastName" placeholder="Last" />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="context" className="text-[9px] font-normal uppercase tracking-[0.22em] text-[var(--gold)]">
+                Project context
+              </label>
+              <textarea
+                id="context"
+                name="context"
+                placeholder="Residential, hospitality, timeline…"
+                rows={3}
+                className="min-h-[88px] resize-y rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors placeholder:text-[rgba(242,237,227,0.3)] focus:border-[var(--gold)]"
+              />
+            </div>
+          </>
+        )}
 
         <button
           type="submit"
           disabled={status === 'sending' || status === 'sent'}
-          className="mt-2 w-full rounded-full px-7 py-4 text-[10px] font-normal uppercase tracking-[0.22em] text-[var(--ink)] shadow-[0_4px_24px_rgba(196,154,74,0.3)] transition-all duration-200 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-90"
+          className="mt-2 w-full rounded-full px-7 py-4 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--ink)] shadow-[0_4px_24px_rgba(196,154,74,0.3)] transition-all duration-200 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-90"
           style={{
             background:
               status === 'sent'
