@@ -1,7 +1,7 @@
 export function Intro() {
   return (
     <section className="mx-auto max-w-[920px] border-b border-[var(--gold-dim)] px-6 py-20 text-center sm:px-10 md:px-16 md:py-24 lg:px-[72px]">
-      <div className="mb-5 text-[10px] font-normal uppercase tracking-[0.3em] text-[var(--gold)]">
+      <div className="mb-5 text-[12px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
         The Story
       </div>
       <h2 className="mx-auto mb-7 max-w-[760px] font-[family-name:var(--font-cormorant)] text-[clamp(28px,4.5vw,44px)] font-normal leading-[1.2] text-[var(--cream)]">

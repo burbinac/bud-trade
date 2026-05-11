@@ -71,7 +71,7 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
 
   return (
     <section id="inquiry" className="mx-auto max-w-[600px] px-6 py-24 text-center sm:px-10">
-      <div className="mb-5 text-[9px] font-normal uppercase tracking-[0.3em] text-[var(--gold)]">
+      <div className="mb-5 text-[12px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
         Request Access
       </div>
       <div className="mx-auto mb-7 h-px w-12 bg-[var(--gold)]" />

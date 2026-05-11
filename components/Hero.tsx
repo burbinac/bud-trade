@@ -10,7 +10,7 @@ export function Hero() {
 
       <div className="relative z-10 flex w-full flex-col gap-12 px-6 pb-12 sm:px-10 sm:pb-16 md:flex-row md:items-end md:justify-between md:px-16 md:pb-20 lg:px-[72px]">
         <div className="max-w-2xl">
-          <div className="anim-up text-[10px] font-normal uppercase tracking-[0.32em] text-[var(--gold)] [animation-delay:0.4s] sm:text-[9px]">
+          <div className="anim-up text-[11px] font-medium uppercase tracking-[0.32em] text-[var(--gold)] [animation-delay:0.4s] sm:text-[12px]">
             Trade Collection — 2026
           </div>
           <h1

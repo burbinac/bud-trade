@@ -12,7 +12,7 @@ export function Placements() {
     <section className="border-b border-[var(--gold-dim)]">
       <div className="mx-auto flex max-w-[1440px] items-center gap-5 px-6 pb-10 pt-16 sm:px-10 md:px-16 md:pb-10 md:pt-20 lg:px-[72px]">
         <div className="h-px flex-1 bg-[var(--gold-dim)]" />
-        <span className="text-[10px] font-normal uppercase tracking-[0.3em] text-[var(--gold)]">
+        <span className="text-[12px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
           Recently Placed
         </span>
         <div className="h-px flex-1 bg-[var(--gold-dim)]" />

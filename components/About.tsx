@@ -13,7 +13,7 @@ export function About() {
       </div>
 
       <div className="flex flex-col justify-center">
-        <div className="mb-5 text-[10px] font-normal uppercase tracking-[0.3em] text-[var(--gold)]">
+        <div className="mb-5 text-[12px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
           The Designer
         </div>
         <h2 className="mb-6 font-[family-name:var(--font-cormorant)] text-[clamp(32px,4vw,44px)] font-normal leading-[1.15] text-[var(--cream)]">
