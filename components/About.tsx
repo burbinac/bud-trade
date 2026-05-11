@@ -5,16 +5,11 @@ export function About() {
       className="mx-auto grid max-w-[1100px] grid-cols-1 gap-12 border-b border-[var(--gold-dim)] px-6 py-20 sm:px-10 md:grid-cols-[5fr_6fr] md:gap-16 md:px-16 md:py-24 lg:px-[72px]"
     >
       <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--ink-2)]">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="font-[family-name:var(--font-cormorant)] text-[120px] font-normal text-[rgba(196,154,74,0.18)]">
-            BU
-          </span>
-        </div>
-        <div className="absolute inset-x-0 bottom-0 p-6 text-center">
-          <p className="text-[8px] font-normal uppercase tracking-[0.22em] text-[rgba(242,237,227,0.45)]">
-            Portrait coming soon
-          </p>
-        </div>
+        <img
+          src="/bernardo/portrait.png"
+          alt="Bernardo Urbina in his design atelier"
+          className="h-full w-full object-cover"
+        />
       </div>
 
       <div className="flex flex-col justify-center">
