@@ -39,7 +39,7 @@ const GROUPS: CountryGroup[] = [
         n: '03',
         title: 'Kiln-Dry',
         location: 'On site',
-        body: 'Six weeks airflow, twelve in the Italian kiln on site.',
+        body: 'Airflow pre-drying, then the Italian kiln on site. 2.5 to 3 months total.',
         image: '/process/kiln.jpg',
       },
     ],
@@ -83,8 +83,8 @@ export function Process() {
         <div className="h-px flex-1 bg-[var(--gold-dim)]" />
       </div>
 
-      <div className="mx-auto max-w-[760px] px-6 pb-8 text-center sm:px-10">
-        <p className="text-[13px] font-normal leading-[1.7] text-[rgba(242,237,227,0.85)] md:text-[14px]">
+      <div className="mx-auto max-w-[820px] px-6 pb-10 text-center sm:px-10">
+        <p className="text-[15px] font-normal leading-[1.7] text-[rgba(242,237,227,0.9)] md:text-[16px]">
           From the forest in Guanacaste to a dining room in the United States —
           <span className="text-[var(--gold)]"> sixteen to twenty weeks, six stages, one person overseeing every one.</span>
         </p>
@@ -102,11 +102,11 @@ export function Process() {
 function CountryRow({ group }: { group: CountryGroup }) {
   return (
     <div>
-      <div className="mb-6 flex items-center gap-4 md:mb-7">
-        <div className="text-[10px] font-medium uppercase tracking-[0.32em] text-[rgba(242,237,227,0.5)]">
+      <div className="mb-7 flex items-center gap-4 md:mb-8">
+        <div className="text-[11px] font-medium uppercase tracking-[0.32em] text-[rgba(242,237,227,0.55)]">
           {group.range}
         </div>
-        <div className="font-[family-name:var(--font-cormorant)] text-[20px] font-normal italic tracking-[0.02em] text-[var(--gold)] md:text-[22px]">
+        <div className="font-[family-name:var(--font-cormorant)] text-[24px] font-normal italic tracking-[0.02em] text-[var(--gold)] md:text-[28px]">
           {group.country}
         </div>
         <div className="h-px flex-1 bg-[var(--gold-dim)]" />
@@ -155,26 +155,26 @@ function Tile({ step, index }: { step: Step; index: number }) {
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[rgba(8,7,5,0.7)] via-transparent to-transparent" />
-            <div className="absolute bottom-3 left-5 font-[family-name:var(--font-cormorant)] text-[40px] font-normal leading-none text-[var(--cream)] drop-shadow-[0_2px_14px_rgba(0,0,0,0.7)]">
+            <div className="absolute bottom-3 left-5 font-[family-name:var(--font-cormorant)] text-[48px] font-normal leading-none text-[var(--cream)] drop-shadow-[0_2px_14px_rgba(0,0,0,0.7)]">
               {step.n}
             </div>
           </div>
         ) : (
           <div className="relative flex aspect-[16/10] items-center justify-center bg-[rgba(196,154,74,0.06)]">
-            <div className="font-[family-name:var(--font-cormorant)] text-[68px] font-normal leading-none text-[var(--gold)]">
+            <div className="font-[family-name:var(--font-cormorant)] text-[88px] font-normal leading-none text-[var(--gold)]">
               {step.n}
             </div>
           </div>
         )}
 
-        <div className="px-5 pb-5 pt-4">
-          <h3 className="font-[family-name:var(--font-cormorant)] text-[22px] font-normal leading-none text-[var(--cream)]">
+        <div className="px-6 pb-6 pt-5">
+          <h3 className="font-[family-name:var(--font-cormorant)] text-[26px] font-normal leading-none text-[var(--cream)]">
             {step.title}
           </h3>
-          <div className="mt-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--gold)]">
+          <div className="mt-2 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--gold)]">
             {step.location}
           </div>
-          <p className="mt-2.5 text-[12px] font-normal leading-[1.7] text-[rgba(242,237,227,0.85)] md:text-[13px]">
+          <p className="mt-3 text-[14px] font-normal leading-[1.7] text-[rgba(242,237,227,0.88)] md:text-[15px]">
             {step.body}
           </p>
         </div>
