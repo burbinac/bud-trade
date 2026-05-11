@@ -27,20 +27,27 @@ const STEPS: Step[] = [
   },
   {
     n: '03',
-    title: 'Dry',
+    title: 'Kiln-Dry',
     location: 'Italian kiln, on site',
     duration: '18 weeks',
-    body: 'A six-week pre-drying phase under shaded airflow allows the cell structure to relax. Then the slab enters an Italian kiln calibrated to US moisture standards — a controlled descent that takes another twelve weeks. By the time it leaves the kiln, the slab is stable enough to live in any climate from Aspen to Miami.',
+    body: 'A six-week pre-drying phase under shaded airflow allows the cell structure to relax. The slab then enters the Italian kiln on site — a controlled descent that takes another twelve weeks. By the time it leaves Costa Rica, the slab is dry, stable, and ready to make the journey north.',
   },
   {
     n: '04',
-    title: 'Finish',
+    title: 'Re-Kiln',
     location: 'Laurens, South Carolina',
-    duration: 'Hand-rubbed',
-    body: 'The slab travels by container to the South Carolina workshop, where every piece is hand-finished. Sanded to a 120-grit surface, oiled by hand so the grain reads forward without losing its depth. Steel or hardwood bases are welded and lacquered to spec.',
+    duration: 'US moisture acclimation',
+    body: 'In Laurens, every slab enters a second kiln calibrated to US interior moisture levels. This re-acclimation is what allows a Costa Rican slab to live in any climate — from Aspen winter air to Miami coastal humidity — without cupping, splitting, or warping years down the line. Each piece exits with its moisture content individually measured and documented.',
   },
   {
     n: '05',
+    title: 'Finish',
+    location: 'Laurens, South Carolina',
+    duration: 'Hand-rubbed',
+    body: 'Sanded to a 120-grit surface, then hand-rubbed with a natural oil that brings the grain forward without obscuring it. Steel or hardwood bases are welded and lacquered to spec. Every finished piece is signed, numbered, and photographed for the file before it leaves the workshop.',
+  },
+  {
+    n: '06',
     title: 'Deliver',
     location: 'White-glove to site',
     duration: 'Room of choice',
@@ -64,7 +71,7 @@ export function Process() {
           From the forest in Guanacaste to a dining room in the United States.
         </h2>
         <p className="mx-auto mt-5 max-w-[600px] text-[14px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)] md:text-[15px]">
-          Sixteen to twenty weeks. Five stages. One person overseeing every one of them.
+          Sixteen to twenty weeks. Six stages. One person overseeing every one of them.
         </p>
       </div>
 
