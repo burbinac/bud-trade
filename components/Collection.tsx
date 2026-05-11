@@ -18,6 +18,7 @@ export function Collection({ onInquire }: Props) {
             index={i}
             onInquire={onInquire}
             featured={i === 0}
+            orphan={i === SLABS.length - 1}
           />
         ))}
       </div>
@@ -29,11 +30,13 @@ function Card({
   slab,
   index,
   featured,
+  orphan,
   onInquire,
 }: {
   slab: Slab;
   index: number;
   featured: boolean;
+  orphan: boolean;
   onInquire: (n: string) => void;
 }) {
   const ref = useRef<HTMLElement | null>(null);
@@ -62,6 +65,10 @@ function Card({
       style={{ transitionDelay: `${Math.min(index, 5) * 60}ms` }}
       className={`group translate-y-4 opacity-0 transition-all duration-700 ease-out [&.in-view]:translate-y-0 [&.in-view]:opacity-100 ${
         featured ? 'lg:col-span-2' : ''
+      } ${
+        orphan
+          ? 'sm:col-span-2 sm:mx-auto sm:max-w-[calc(50%-12px)] lg:col-span-1 lg:col-start-2 lg:mx-0 lg:max-w-none'
+          : ''
       }`}
     >
       <div className="overflow-hidden rounded-2xl bg-[var(--ink-2)] transition-transform duration-300 hover:-translate-y-1">

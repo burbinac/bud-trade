@@ -19,15 +19,6 @@ export const SLABS: Slab[] = [
     image: 'https://cdn.shopify.com/s/files/1/0690/6370/4883/files/04-chicago-boardroom-flowyline08.jpg',
   },
   {
-    slug: 'sarapiqui',
-    name: 'The Sarapiquí',
-    tag: 'Hospitality · Residential',
-    wood: 'Monkey Pod',
-    length: '138½"',
-    seats: 'Seats 12–14',
-    image: 'https://cdn.shopify.com/s/files/1/0690/6370/4883/files/01-austin-hotel-lobby-flowyline17.jpg',
-  },
-  {
     slug: 'tivives',
     name: 'The Tivives',
     tag: 'Hospitality Lounge',
@@ -89,5 +80,14 @@ export const SLABS: Slab[] = [
     length: '120"',
     seats: 'Seats 10–12',
     image: 'https://cdn.shopify.com/s/files/1/0690/6370/4883/files/05-nashville-chefstable-flowyline17.jpg',
+  },
+  {
+    slug: 'sarapiqui',
+    name: 'The Sarapiquí',
+    tag: 'Hospitality · Residential',
+    wood: 'Monkey Pod',
+    length: '138½"',
+    seats: 'Seats 12–14',
+    image: 'https://cdn.shopify.com/s/files/1/0690/6370/4883/files/01-austin-hotel-lobby-flowyline17.jpg',
   },
 ];
