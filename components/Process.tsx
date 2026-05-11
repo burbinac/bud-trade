@@ -47,8 +47,8 @@ const STEPS: Step[] = [
     n: '05',
     title: 'Finish',
     location: 'Laurens, South Carolina',
-    duration: 'Hand-rubbed',
-    body: 'Sanded to a 120-grit surface, then hand-rubbed with a natural oil that brings the grain forward without obscuring it. Steel or hardwood bases are welded and lacquered to spec. Every finished piece is signed, numbered, and photographed for the file before it leaves the workshop.',
+    duration: 'Commercial-grade satin',
+    body: 'Sanded to a 120-grit surface, then finished with 1K clear satin polyurethane — a commercial-grade top coat built for chef’s tables, hotel lobbies, and boardrooms. Durable under heat, moisture, and daily use; satin sheen so the grain still reads forward. Steel or hardwood bases are welded and lacquered to spec. Every finished piece is signed, numbered, and photographed for the file before it leaves the workshop.',
     image: '/process/finish.jpg',
   },
   {
