@@ -17,7 +17,7 @@ const STEPS: Step[] = [
     title: 'Select',
     location: 'Guanacaste, Costa Rica',
     duration: 'Single-tree provenance',
-    body: 'Every piece begins with a single fallen tree. Bernardo selects each log personally at the mill in Guanacaste province — validating its MINAE harvest permit, its age, and the promise of its grain. Costa Rica only allows old-growth Guanacaste and Monkey Pod under strict environmental oversight, and each tree arrives documented from its origin.',
+    body: 'Old-growth Guanacaste and Monkey Pod, harvested under MINAE permit. Bernardo selects each log personally.',
     image: '/process/select.jpg',
   },
   {
@@ -25,7 +25,7 @@ const STEPS: Step[] = [
     title: 'Mill',
     location: 'Costa Rica Mill',
     duration: 'Deliberated cuts',
-    body: 'Bernardo deliberates over how each log will be cut. The slab inside is not yet visible; the right cut reveals the story the wood wants to tell. A bookmatched live edge. A single uninterrupted plank. Once cut, the slab is photographed, catalogued, and assigned its name.',
+    body: 'Bernardo decides each cut. Every slab is photographed, catalogued, and assigned its name on the spot.',
     image: '/process/mill.jpg',
   },
   {
@@ -33,7 +33,7 @@ const STEPS: Step[] = [
     title: 'Kiln-Dry',
     location: 'Italian kiln, on site',
     duration: '18 weeks',
-    body: 'A six-week pre-drying phase under shaded airflow allows the cell structure to relax. The slab then enters the Italian kiln on site — a controlled descent that takes another twelve weeks. By the time it leaves Costa Rica, the slab is dry, stable, and ready to make the journey north.',
+    body: 'Six weeks of shaded pre-drying, then twelve in the Italian kiln. The slab leaves Costa Rica stable.',
     image: '/process/kiln.jpg',
   },
   {
@@ -41,14 +41,14 @@ const STEPS: Step[] = [
     title: 'Re-Kiln',
     location: 'Laurens, South Carolina',
     duration: 'US moisture acclimation',
-    body: 'In Laurens, every slab enters a second kiln calibrated to US interior moisture levels. This re-acclimation is what allows a Costa Rican slab to live in any climate — from Aspen winter air to Miami coastal humidity — without cupping, splitting, or warping years down the line. Each piece exits with its moisture content individually measured and documented.',
+    body: 'A second kiln in Laurens, calibrated to US interior moisture. Holds in any US climate, Aspen to Miami.',
   },
   {
     n: '05',
     title: 'Finish',
     location: 'Laurens, South Carolina',
     duration: 'Commercial-grade satin',
-    body: 'Sanded to a 120-grit surface, then finished with 1K clear satin polyurethane — a commercial-grade top coat built for chef’s tables, hotel lobbies, and boardrooms. Durable under heat, moisture, and daily use; satin sheen so the grain still reads forward. Steel or hardwood bases are welded and lacquered to spec. Every finished piece is signed, numbered, and photographed for the file before it leaves the workshop.',
+    body: '120-grit sanding, 1K clear satin polyurethane. Built for chef’s tables, hotel lobbies, and boardrooms.',
     image: '/process/finish.jpg',
   },
   {
@@ -56,14 +56,14 @@ const STEPS: Step[] = [
     title: 'Deliver',
     location: 'White-glove to site',
     duration: 'Room of choice',
-    body: 'White-glove freight by ArcBest or Plycon to the room of choice. All packaging removed, all hardware placed. CAFTA-DR duty-free. The piece that arrives is the piece Bernardo chose, sixteen to twenty weeks earlier.',
+    body: 'White-glove freight by ArcBest or Plycon. Room of choice, all packaging removed. CAFTA-DR duty-free.',
   },
 ];
 
 export function Process() {
   return (
     <section className="border-b border-[var(--gold-dim)] bg-[var(--ink-2)]">
-      <div className="mx-auto flex max-w-[1440px] items-center gap-5 px-6 pb-10 pt-16 sm:px-10 md:px-16 md:pb-10 md:pt-20 lg:px-[72px]">
+      <div className="mx-auto flex max-w-[1440px] items-center gap-5 px-6 pb-8 pt-16 sm:px-10 md:px-16 md:pt-20 lg:px-[72px]">
         <div className="h-px flex-1 bg-[var(--gold-dim)]" />
         <span className="text-[12px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
           The Process
@@ -71,33 +71,27 @@ export function Process() {
         <div className="h-px flex-1 bg-[var(--gold-dim)]" />
       </div>
 
-      <div className="mx-auto max-w-[920px] px-6 pb-8 text-center sm:px-10">
-        <h2 className="mx-auto max-w-[700px] font-[family-name:var(--font-cormorant)] text-[clamp(32px,4.5vw,48px)] font-normal leading-[1.15] text-[var(--cream)]">
+      <div className="mx-auto max-w-[820px] px-6 pb-10 text-center sm:px-10">
+        <h2 className="mx-auto max-w-[600px] font-[family-name:var(--font-cormorant)] text-[clamp(28px,3.6vw,40px)] font-normal leading-[1.2] text-[var(--cream)]">
           From the forest in Guanacaste to a dining room in the United States.
         </h2>
-        <p className="mx-auto mt-5 max-w-[600px] text-[14px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)] md:text-[15px]">
-          Sixteen to twenty weeks. Six stages. One person overseeing every one of them.
+        <p className="mx-auto mt-4 max-w-[520px] text-[13px] font-normal leading-[1.8] text-[rgba(242,237,227,0.85)] md:text-[14px]">
+          Sixteen to twenty weeks. Six stages. One person overseeing every one.
         </p>
       </div>
 
-      <div className="mx-auto max-w-[1200px] px-6 pb-24 sm:px-10 md:px-16 lg:px-[72px]">
-        {STEPS.map((step, i) => (
-          <StepBlock key={step.n} step={step} index={i} isLast={i === STEPS.length - 1} />
-        ))}
+      <div className="mx-auto max-w-[1200px] px-6 pb-20 sm:px-10 md:px-12 md:pb-24">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {STEPS.map((step, i) => (
+            <Tile key={step.n} step={step} index={i} />
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-function StepBlock({
-  step,
-  index,
-  isLast,
-}: {
-  step: Step;
-  index: number;
-  isLast: boolean;
-}) {
+function Tile({ step, index }: { step: Step; index: number }) {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -110,72 +104,53 @@ function StepBlock({
           io.disconnect();
         }
       },
-      { threshold: 0.18, rootMargin: '0px 0px -10% 0px' },
+      { threshold: 0.15, rootMargin: '0px 0px -8% 0px' },
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
 
-  const reverse = index % 2 === 1;
-  const hasImage = Boolean(step.image);
-
   return (
     <div
       ref={ref}
-      className="translate-y-6 opacity-0 transition-all duration-700 ease-out [&.in-view]:translate-y-0 [&.in-view]:opacity-100"
+      style={{ transitionDelay: `${Math.min(index, 5) * 50}ms` }}
+      className="translate-y-4 opacity-0 transition-all duration-700 ease-out [&.in-view]:translate-y-0 [&.in-view]:opacity-100"
     >
-      {hasImage ? (
-        <div className="grid grid-cols-1 gap-8 py-10 md:grid-cols-[4fr_5fr] md:gap-12 md:py-12">
-          <div className={`relative overflow-hidden rounded-2xl bg-[rgba(8,7,5,0.4)] ${reverse ? 'md:order-2' : ''}`}>
-            <div className="relative aspect-[4/3]">
-              <img
-                src={step.image}
-                alt={`${step.title} — ${step.location}`}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(8,7,5,0.55)] via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-5 font-[family-name:var(--font-cormorant)] text-[clamp(44px,5.5vw,72px)] font-normal leading-[0.85] text-[var(--cream)] drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)]">
-                {step.n}
-              </div>
+      <div className="overflow-hidden rounded-2xl bg-[rgba(8,7,5,0.5)]">
+        {step.image ? (
+          <div className="relative aspect-[16/10]">
+            <img
+              src={step.image}
+              alt={`${step.title} — ${step.location}`}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(8,7,5,0.7)] via-transparent to-transparent" />
+            <div className="absolute bottom-3 left-4 font-[family-name:var(--font-cormorant)] text-[44px] font-normal leading-none text-[var(--cream)] drop-shadow-[0_4px_18px_rgba(0,0,0,0.6)]">
+              {step.n}
             </div>
           </div>
+        ) : (
+          <div className="relative flex aspect-[16/10] items-center justify-center bg-[rgba(196,154,74,0.06)]">
+            <div className="font-[family-name:var(--font-cormorant)] text-[96px] font-normal leading-none text-[var(--gold)]">
+              {step.n}
+            </div>
+          </div>
+        )}
 
-          <div className={`flex flex-col justify-center ${reverse ? 'md:order-1' : ''}`}>
-            <div className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
-              {step.location}
-            </div>
-            <h3 className="mt-3 font-[family-name:var(--font-cormorant)] text-[clamp(28px,3.6vw,40px)] font-normal leading-[1.15] text-[var(--cream)]">
-              {step.title}
-            </h3>
-            <div className="mt-2 text-[11px] font-normal uppercase tracking-[0.2em] text-[rgba(242,237,227,0.65)]">
-              {step.duration}
-            </div>
-            <p className="mt-6 text-[14px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)] md:text-[15px]">
-              {step.body}
-            </p>
-          </div>
-        </div>
-      ) : (
-        <div className="mx-auto grid max-w-[760px] grid-cols-1 gap-6 py-10 text-center md:py-14">
-          <div className="font-[family-name:var(--font-cormorant)] text-[clamp(56px,7vw,96px)] font-normal leading-[0.85] text-[var(--gold)]">
-            {step.n}
-          </div>
-          <div className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
-            {step.location}
-          </div>
-          <h3 className="font-[family-name:var(--font-cormorant)] text-[clamp(28px,3.6vw,40px)] font-normal leading-[1.15] text-[var(--cream)]">
+        <div className="px-5 pb-5 pt-4">
+          <h3 className="font-[family-name:var(--font-cormorant)] text-[24px] font-normal leading-none text-[var(--cream)]">
             {step.title}
           </h3>
-          <div className="text-[11px] font-normal uppercase tracking-[0.2em] text-[rgba(242,237,227,0.65)]">
-            {step.duration}
+          <div className="mt-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--gold)]">
+            {step.location}
+            <span className="mx-1.5 text-[var(--gold-dim)]">·</span>
+            <span className="text-[rgba(242,237,227,0.6)]">{step.duration}</span>
           </div>
-          <p className="mx-auto max-w-[640px] text-[14px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)] md:text-[15px]">
+          <p className="mt-3 text-[13px] font-normal leading-[1.7] text-[rgba(242,237,227,0.85)]">
             {step.body}
           </p>
         </div>
-      )}
-
-      {!isLast && <div className="h-px w-full bg-[var(--gold-dim)]" />}
+      </div>
     </div>
   );
 }

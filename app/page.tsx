@@ -28,11 +28,11 @@ export default function Page() {
       <Header />
       <Hero />
       <Intro />
-      <About />
-      <Process />
       <SectionLabel id="collection">The Collection</SectionLabel>
       <Collection onInquire={handleInquire} />
       <Placements />
+      <About />
+      <Process />
       <SectionLabel id="trade">Trade Program</SectionLabel>
       <TradeProgram />
       <InquiryForm selectedSlab={selectedSlab} onSlabChange={setSelectedSlab} />
