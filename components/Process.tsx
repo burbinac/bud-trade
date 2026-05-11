@@ -28,8 +28,8 @@ const STEPS: Step[] = [
   {
     n: '03',
     title: 'Kiln-Dry',
-    location: 'On site',
-    body: 'Six weeks airflow, twelve in the Italian kiln.',
+    location: 'Costa Rica',
+    body: 'Six weeks airflow, twelve in the Italian kiln on site.',
     image: '/process/kiln.jpg',
   },
   {
@@ -72,8 +72,8 @@ export function Process() {
         </p>
       </div>
 
-      <div className="mx-auto max-w-[1280px] px-6 pb-16 sm:px-10 md:px-12 md:pb-20">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
+      <div className="mx-auto max-w-[1100px] px-6 pb-16 sm:px-10 md:px-12 md:pb-20">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
           {STEPS.map((step, i) => (
             <Tile key={step.n} step={step} index={i} />
           ))}
@@ -108,35 +108,35 @@ function Tile({ step, index }: { step: Step; index: number }) {
       style={{ transitionDelay: `${Math.min(index, 5) * 40}ms` }}
       className="translate-y-3 opacity-0 transition-all duration-500 ease-out [&.in-view]:translate-y-0 [&.in-view]:opacity-100"
     >
-      <div className="overflow-hidden rounded-xl bg-[rgba(8,7,5,0.5)]">
+      <div className="overflow-hidden rounded-2xl bg-[rgba(8,7,5,0.5)]">
         {step.image ? (
-          <div className="relative aspect-[4/3]">
+          <div className="relative aspect-[16/10]">
             <img
               src={step.image}
               alt={`${step.title} — ${step.location}`}
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[rgba(8,7,5,0.7)] via-transparent to-transparent" />
-            <div className="absolute bottom-2 left-3 font-[family-name:var(--font-cormorant)] text-[28px] font-normal leading-none text-[var(--cream)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]">
+            <div className="absolute bottom-3 left-5 font-[family-name:var(--font-cormorant)] text-[48px] font-normal leading-none text-[var(--cream)] drop-shadow-[0_2px_14px_rgba(0,0,0,0.7)]">
               {step.n}
             </div>
           </div>
         ) : (
-          <div className="relative flex aspect-[4/3] items-center justify-center bg-[rgba(196,154,74,0.06)]">
-            <div className="font-[family-name:var(--font-cormorant)] text-[56px] font-normal leading-none text-[var(--gold)]">
+          <div className="relative flex aspect-[16/10] items-center justify-center bg-[rgba(196,154,74,0.06)]">
+            <div className="font-[family-name:var(--font-cormorant)] text-[80px] font-normal leading-none text-[var(--gold)]">
               {step.n}
             </div>
           </div>
         )}
 
-        <div className="px-3.5 pb-3.5 pt-3">
-          <h3 className="font-[family-name:var(--font-cormorant)] text-[18px] font-normal leading-none text-[var(--cream)]">
+        <div className="px-6 pb-5 pt-4">
+          <h3 className="font-[family-name:var(--font-cormorant)] text-[24px] font-normal leading-none text-[var(--cream)]">
             {step.title}
           </h3>
-          <div className="mt-1 text-[9px] font-medium uppercase tracking-[0.18em] text-[var(--gold)]">
+          <div className="mt-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--gold)]">
             {step.location}
           </div>
-          <p className="mt-2 text-[11px] font-normal leading-[1.55] text-[rgba(242,237,227,0.75)]">
+          <p className="mt-2.5 text-[13px] font-normal leading-[1.7] text-[rgba(242,237,227,0.85)]">
             {step.body}
           </p>
         </div>
