@@ -20,20 +20,24 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'border-b border-[var(--gold-dim)] bg-[rgba(8,7,5,0.85)] backdrop-blur-md'
-          : 'border-b border-transparent bg-transparent'
+          ? 'border-b border-[var(--gold-dim)] bg-[rgba(8,7,5,0.9)] backdrop-blur-md'
+          : 'border-b border-transparent bg-gradient-to-b from-[rgba(8,7,5,0.75)] via-[rgba(8,7,5,0.45)] to-transparent'
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-6 sm:h-[72px] sm:px-10 md:px-16 lg:px-[72px]">
-        <a href="#" className="flex items-center gap-3" aria-label="Bernardo Urbina Design — home">
+      <div className="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between px-6 sm:h-20 sm:px-10 md:h-[88px] md:px-16 lg:px-[72px]">
+        <a
+          href="#"
+          className="flex items-center gap-4"
+          aria-label="Bernardo Urbina Design — home"
+        >
           <img
             src="https://cdn.shopify.com/s/files/1/0690/6370/4883/files/Untitled-1.png"
             alt="BUD"
-            className="h-7 w-auto sm:h-8"
+            className="h-10 w-auto sm:h-12 md:h-14"
           />
-          <span className="hidden text-[10px] font-normal uppercase tracking-[0.22em] text-[var(--cream)] sm:inline">
+          <span className="hidden text-[12px] font-medium uppercase tracking-[0.22em] text-[var(--cream)] sm:inline md:text-[13px]">
             Bernardo Urbina Design
           </span>
         </a>
@@ -43,7 +47,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-[10px] font-normal uppercase tracking-[0.22em] text-[var(--cream)] transition-colors hover:text-[var(--gold)]"
+              className="text-[11px] font-normal uppercase tracking-[0.22em] text-[var(--cream)] transition-colors hover:text-[var(--gold)]"
             >
               {item.label}
             </a>
