@@ -25,8 +25,10 @@ export function Hero() {
             <br />
             Finished in the United States &nbsp;·&nbsp; One of each will ever exist
           </div>
-          <div className="anim-up mt-5 font-[family-name:var(--font-cormorant)] text-base font-normal tracking-[0.1em] text-[var(--gold)] [animation-delay:0.9s]">
-            Trade pricing on approval
+          <div className="anim-up mt-5 font-[family-name:var(--font-cormorant)] text-[18px] font-medium tracking-[0.04em] text-[var(--gold)] [animation-delay:0.9s] md:text-[20px]">
+            Starting at $15,000
+            <span className="mx-3 text-[var(--gold-dim)]">·</span>
+            <span className="text-[14px] tracking-[0.08em] text-[rgba(242,237,227,0.85)] md:text-[15px]">Trade pricing on approval</span>
           </div>
           <div className="anim-up mt-8 flex flex-wrap items-center gap-6 [animation-delay:1s]">
             <a
