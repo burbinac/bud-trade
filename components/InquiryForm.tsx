@@ -18,8 +18,8 @@ const NEXT_STEPS = [
   },
   {
     n: '02',
-    title: 'Slab photography',
-    body: 'Once you’ve narrowed your interest, Bernardo sends real photography of the actual slabs being considered — figured grain, live-edge profile, exact dimensions.',
+    title: 'Define',
+    body: 'Real photography of the slabs being considered, plus base options (steel or hardwood) and any design details. Everything signed off before commission begins.',
   },
   {
     n: '03',
