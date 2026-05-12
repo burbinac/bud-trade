@@ -188,13 +188,10 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
             </>
           )}
 
-          {/* Spacer that pushes the submit button to the bottom of the column */}
-          <div className="flex-1" />
-
           <button
             type="submit"
             disabled={status === 'sending' || status === 'sent'}
-            className="w-full rounded-full px-7 py-4 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--ink)] shadow-[0_4px_24px_rgba(196,154,74,0.3)] transition-all duration-200 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-90"
+            className="mt-2 w-full rounded-full px-7 py-4 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--ink)] shadow-[0_4px_24px_rgba(196,154,74,0.3)] transition-all duration-200 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-90"
             style={{
               background:
                 status === 'sent'
@@ -221,6 +218,22 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
             </p>
           )}
           </form>
+
+          {/* Alternative contact path — fills the column bottom with useful content */}
+          <div className="mt-auto border-t border-[var(--gold-dim)] pt-7">
+            <div className="mb-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
+              Prefer to email directly?
+            </div>
+            <a
+              href="mailto:trade@bernardourbina.com"
+              className="font-[family-name:var(--font-cormorant)] text-[20px] font-normal text-[var(--cream)] transition-colors hover:text-[var(--gold)]"
+            >
+              trade@bernardourbina.com
+            </a>
+            <p className="mt-2 text-[12px] font-normal leading-[1.7] text-[rgba(242,237,227,0.7)]">
+              Bernardo replies personally within one business day.
+            </p>
+          </div>
         </div>
       </div>
     </section>
