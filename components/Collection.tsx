@@ -107,6 +107,9 @@ function Card({
           <div className={`mb-2 font-[family-name:var(--font-cormorant)] font-normal leading-none text-[var(--cream)] ${featured ? 'text-[40px] md:text-[48px]' : 'text-[26px]'}`}>
             {slab.name}
           </div>
+          <p className="mb-3 font-[family-name:var(--font-cormorant)] text-[16px] font-normal italic leading-[1.35] text-[rgba(242,237,227,0.75)]">
+            {slab.essence}
+          </p>
           <div className="mb-4 text-[12px] font-medium tracking-[0.06em] text-[rgba(242,237,227,0.85)]">
             <span>{slab.wood}</span>
             <span className="mx-1.5 text-[var(--gold-dim)]">·</span>

@@ -20,14 +20,17 @@ export function About() {
           Bernardo Urbina
         </h2>
         <p className="mb-5 text-[14px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)] md:text-[15px]">
-          Bernardo designs one-of-a-kind dining tables from the hardwoods he sources himself —
-          old-growth Guanacaste and Monkey Pod from forests near his home in the Guanacaste
-          province of Costa Rica.
+          Bernardo studied furniture design at Pratt Institute in Brooklyn, then spent five
+          years designing for studios in SoHo. He moved to Milan to design exhibitions for
+          Salone del Mobile and earn a Master&apos;s at Politecnico di Milano. After three
+          years in the Philippines — where he founded his first furniture brand and was
+          featured in <em>The New York Times</em> — he returned home to Costa Rica.
         </p>
         <p className="text-[14px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)] md:text-[15px]">
-          Each slab is kiln-dried twice to US moisture standards, then hand-finished in South
-          Carolina. Bernardo oversees every commission from slab selection to delivery, so the
-          piece that arrives is the piece he chose.
+          Today he works between a mill in rural Guanacaste and a finishing studio in South
+          Carolina. Every piece is sourced, designed, and overseen by Bernardo from a
+          farmer&apos;s tree to a designer&apos;s spec sheet — the table that arrives is the
+          table he chose.
         </p>
       </div>
     </section>

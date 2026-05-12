@@ -25,7 +25,7 @@ const GROUPS: CountryGroup[] = [
         n: '01',
         title: 'Select',
         location: 'Guanacaste',
-        body: 'A single fallen tree in the Guanacaste rainforest, harvested under MINAE permit. Bernardo selects every log personally — species, age, grain.',
+        body: 'A fallen tree on a farmer’s land in rural Guanacaste, harvested under MINAE permit. Bernardo selects every log personally — species, age, grain.',
         image: '/process/select.jpg',
       },
       {
@@ -85,7 +85,7 @@ export function Process() {
 
       <div className="mx-auto max-w-[820px] px-6 pb-10 text-center sm:px-10">
         <p className="text-[15px] font-normal leading-[1.7] text-[rgba(242,237,227,0.9)] md:text-[16px]">
-          From the forest in Guanacaste to the South Carolina workshop —
+          From a farmer’s tree in rural Guanacaste to the South Carolina workshop —
           <span className="text-[var(--gold)]"> thirteen to fifteen weeks of production, six stages, one person overseeing every one.</span>
         </p>
       </div>

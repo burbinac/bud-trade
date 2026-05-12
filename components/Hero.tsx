@@ -30,28 +30,19 @@ export function Hero() {
             <span className="mx-3 text-[var(--gold-dim)]">·</span>
             <span className="text-[14px] tracking-[0.08em] text-[rgba(242,237,227,0.85)] md:text-[15px]">Trade pricing on approval</span>
           </div>
-          <div className="anim-up mt-8 flex flex-wrap items-center gap-6 [animation-delay:1s]">
+          <div className="anim-up mt-8 [animation-delay:1s]">
             <a
               href="#inquiry"
               className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-7 py-3 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--ink)] shadow-[0_4px_20px_rgba(196,154,74,0.25)] transition-all duration-200 hover:-translate-y-px hover:bg-[var(--gold-hover)]"
             >
               Request Spec Sheets
             </a>
-            <a
-              href="#collection"
-              className="group inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--cream)] transition-colors hover:text-[var(--gold)]"
-            >
-              View Collection
-              <span aria-hidden className="transition-transform group-hover:translate-y-0.5">
-                ↓
-              </span>
-            </a>
           </div>
         </div>
 
         <div className="anim-up flex flex-row gap-8 md:flex-col md:items-end md:gap-7 md:pb-1.5 [animation-delay:1s]">
           <Stat n="9" label="One-of-a-kind slabs" />
-          <Stat n="WG" label="White-glove delivery" />
+          <Stat n="On Request" label="White-glove delivery" />
           <Stat n="13–15" label="Week production" />
         </div>
       </div>

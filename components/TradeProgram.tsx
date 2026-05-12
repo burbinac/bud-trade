@@ -16,7 +16,7 @@ const TILES = [
   },
   {
     n: '13–15',
-    title: 'Week Production',
+    title: 'Production Weeks',
     body: 'Commission to ship-ready, from the South Carolina workshop. Delivery scheduled separately once the piece is finished.',
   },
 ];
