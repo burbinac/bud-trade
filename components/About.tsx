@@ -22,9 +22,10 @@ export function About() {
         <p className="mb-5 text-[14px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)] md:text-[15px]">
           Bernardo spent five years in New York — studying furniture design at Pratt
           Institute, then working in SoHo studios. He moved to Milan to design exhibitions
-          for Salone del Mobile and earn a Master&apos;s at Politecnico di Milano. After
-          three years in the Philippines — where he founded his first furniture brand and
-          was featured in <em>The New York Times</em> — he returned home to Costa Rica.
+          for Moooi during Salone del Mobile and for the Triennale di Milano museum, while
+          earning a Master&apos;s at Politecnico di Milano. After three years in the
+          Philippines — where he founded his first furniture brand and was featured in{' '}
+          <em>The New York Times</em> — he returned home to Costa Rica.
         </p>
         <p className="text-[14px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)] md:text-[15px]">
           Today he works between a mill in rural Guanacaste and a finishing studio in South
