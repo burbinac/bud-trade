@@ -108,10 +108,14 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_1fr] md:gap-16">
+      <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-[1fr_1fr] md:gap-16">
         <NextSteps />
 
-        <form className="flex flex-col gap-4 text-left" onSubmit={handleSubmit} noValidate>
+        <div>
+          <div className="mb-8 text-[11px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
+            Your details
+          </div>
+          <form className="flex flex-col gap-4 text-left" onSubmit={handleSubmit} noValidate>
           <div className="absolute -left-[9999px]" aria-hidden="true">
             <label>
               Website
@@ -213,7 +217,8 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
               instead.
             </p>
           )}
-        </form>
+          </form>
+        </div>
       </div>
     </section>
   );
