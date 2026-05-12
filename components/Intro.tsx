@@ -9,7 +9,7 @@ export function Intro() {
       </h2>
       <p className="mx-auto max-w-[640px] text-[14px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)] md:text-[15px]">
         Each piece begins in the rainforests of Costa Rica — old-growth Guanacaste and Monkey Pod,
-        harvested under MINAE permit, double kiln-dried to US moisture standards. Designed by
+        harvested under MINAE permit, kiln-dried twice to US moisture standards. Designed by
         Bernardo Urbina and finished in Laurens, South Carolina, every table arrives white-glove
         to site.
       </p>

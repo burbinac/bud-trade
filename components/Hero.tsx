@@ -21,7 +21,7 @@ export function Hero() {
             One Table.
           </h1>
           <div className="anim-up mt-6 text-[12px] font-medium uppercase leading-[1.9] tracking-[0.18em] text-[rgba(242,237,227,0.85)] [animation-delay:0.8s] sm:text-[13px] md:text-[14px]">
-            Costa Rican Hardwood &nbsp;·&nbsp; Double Kiln-Dried
+            Costa Rican Hardwood &nbsp;·&nbsp; Kiln-Dried Twice
             <br />
             Finished in the United States &nbsp;·&nbsp; One of each will ever exist
           </div>
