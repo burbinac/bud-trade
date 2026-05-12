@@ -10,6 +10,29 @@ type Props = {
   onSlabChange: (v: string) => void;
 };
 
+const NEXT_STEPS = [
+  {
+    n: '01',
+    title: 'Spec sheets',
+    body: 'The 12-page trade catalog arrives in your inbox within one business day — dimensions, base options, finishes, and trade pricing for all nine pieces.',
+  },
+  {
+    n: '02',
+    title: 'Slab photography',
+    body: 'Once you’ve narrowed your interest, Bernardo sends real photography of the actual slabs being considered — figured grain, live-edge profile, exact dimensions.',
+  },
+  {
+    n: '03',
+    title: 'Commission',
+    body: 'A 50% deposit secures the slab. Bernardo signs the spec sheet, and the piece enters the 13–15 week production schedule in Laurens.',
+  },
+  {
+    n: '04',
+    title: 'Ship',
+    body: 'White-glove freight is quoted on completion — ArcBest, Plycon, or your preferred carrier. Or arrange your own delivery from the workshop.',
+  },
+];
+
 export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -70,123 +93,156 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
         : 'Send Request →';
 
   return (
-    <section id="inquiry" className="mx-auto max-w-[600px] px-6 py-24 text-center sm:px-10">
-      <div className="mb-5 text-[12px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
-        Request Access
+    <section id="inquiry" className="mx-auto max-w-[1200px] px-6 py-24 sm:px-10 md:px-16 lg:px-[72px]">
+      <div className="mb-12 text-center md:mb-16">
+        <div className="mb-5 text-[12px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
+          Request Access
+        </div>
+        <div className="mx-auto mb-7 h-px w-12 bg-[var(--gold)]" />
+        <h2 className="mb-4 font-[family-name:var(--font-cormorant)] text-[clamp(32px,5vw,56px)] font-normal text-[var(--cream)]">
+          Request Spec Sheets
+        </h2>
+        <p className="mx-auto max-w-md text-[14px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)]">
+          The 12-page trade catalog arrives within one business day — and here&apos;s what
+          happens after that.
+        </p>
       </div>
-      <div className="mx-auto mb-7 h-px w-12 bg-[var(--gold)]" />
-      <h2 className="mb-4 font-[family-name:var(--font-cormorant)] text-[clamp(32px,5vw,56px)] font-normal text-[var(--cream)]">
-        Request Spec Sheets
-      </h2>
-      <p className="mx-auto mb-10 max-w-md text-[13px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)]">
-        We&apos;ll send the 12-page trade catalog within one business day — dimensions, slab
-        photography, base options, and trade pricing for all nine pieces.
-      </p>
 
-      <form className="flex flex-col gap-4 text-left" onSubmit={handleSubmit} noValidate>
-        <div className="absolute -left-[9999px]" aria-hidden="true">
-          <label>
-            Website
-            <input
-              type="text"
-              name="company_website"
-              tabIndex={-1}
-              autoComplete="off"
-            />
-          </label>
-        </div>
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_1fr] md:gap-16">
+        <NextSteps />
 
-        <Field
-          label="Work Email"
-          name="email"
-          type="email"
-          placeholder="you@studio.com"
-          required
-        />
-        <Field label="Firm / Studio" name="firm" placeholder="Your studio name" required />
-
-        <div className="flex flex-col gap-2">
-          <label htmlFor="slab" className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
-            Slab of interest
-          </label>
-          <select
-            id="slab"
-            name="slab"
-            value={selectedSlab}
-            onChange={(e) => onSlabChange(e.target.value)}
-            className="appearance-none rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors focus:border-[var(--gold)]"
-          >
-            <option value="">— Full catalog (all nine slabs)</option>
-            {SLABS.map((s) => (
-              <option key={s.slug} value={s.name}>
-                {s.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {!showOptional && (
-          <button
-            type="button"
-            onClick={() => setShowOptional(true)}
-            className="self-center text-[10px] font-normal uppercase tracking-[0.22em] text-[rgba(242,237,227,0.6)] transition-colors hover:text-[var(--gold)]"
-          >
-            + Add project details (optional)
-          </button>
-        )}
-
-        {showOptional && (
-          <>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <Field label="First Name" name="firstName" placeholder="First" />
-              <Field label="Last Name" name="lastName" placeholder="Last" />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="context" className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
-                Project context
-              </label>
-              <textarea
-                id="context"
-                name="context"
-                placeholder="Residential, hospitality, timeline…"
-                rows={3}
-                className="min-h-[88px] resize-y rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors placeholder:text-[rgba(242,237,227,0.3)] focus:border-[var(--gold)]"
+        <form className="flex flex-col gap-4 text-left" onSubmit={handleSubmit} noValidate>
+          <div className="absolute -left-[9999px]" aria-hidden="true">
+            <label>
+              Website
+              <input
+                type="text"
+                name="company_website"
+                tabIndex={-1}
+                autoComplete="off"
               />
-            </div>
-          </>
-        )}
+            </label>
+          </div>
 
-        <button
-          type="submit"
-          disabled={status === 'sending' || status === 'sent'}
-          className="mt-2 w-full rounded-full px-7 py-4 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--ink)] shadow-[0_4px_24px_rgba(196,154,74,0.3)] transition-all duration-200 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-90"
-          style={{
-            background:
-              status === 'sent'
-                ? '#4A7A50'
-                : status === 'error'
-                  ? '#7A4A4A'
-                  : 'var(--gold)',
-            color: status === 'sent' || status === 'error' ? 'var(--cream)' : 'var(--ink)',
-          }}
-        >
-          {buttonLabel}
-        </button>
+          <Field
+            label="Work Email"
+            name="email"
+            type="email"
+            placeholder="you@studio.com"
+            required
+          />
+          <Field label="Firm / Studio" name="firm" placeholder="Your studio name" required />
 
-        {status === 'error' && (
-          <p className="text-center text-[11px] text-[rgba(242,237,227,0.7)]">
-            {errorMessage ?? 'Something went wrong.'} Please email{' '}
-            <a
-              href="mailto:trade@bernardourbina.com"
-              className="text-[var(--gold)] underline-offset-2 hover:underline"
+          <div className="flex flex-col gap-2">
+            <label htmlFor="slab" className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
+              Slab of interest
+            </label>
+            <select
+              id="slab"
+              name="slab"
+              value={selectedSlab}
+              onChange={(e) => onSlabChange(e.target.value)}
+              className="appearance-none rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors focus:border-[var(--gold)]"
             >
-              trade@bernardourbina.com
-            </a>{' '}
-            instead.
-          </p>
-        )}
-      </form>
+              <option value="">— Full catalog (all nine slabs)</option>
+              {SLABS.map((s) => (
+                <option key={s.slug} value={s.name}>
+                  {s.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {!showOptional && (
+            <button
+              type="button"
+              onClick={() => setShowOptional(true)}
+              className="self-center text-[10px] font-normal uppercase tracking-[0.22em] text-[rgba(242,237,227,0.6)] transition-colors hover:text-[var(--gold)]"
+            >
+              + Add project details (optional)
+            </button>
+          )}
+
+          {showOptional && (
+            <>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <Field label="First Name" name="firstName" placeholder="First" />
+                <Field label="Last Name" name="lastName" placeholder="Last" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="context" className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
+                  Project context
+                </label>
+                <textarea
+                  id="context"
+                  name="context"
+                  placeholder="Residential, hospitality, timeline…"
+                  rows={3}
+                  className="min-h-[88px] resize-y rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors placeholder:text-[rgba(242,237,227,0.3)] focus:border-[var(--gold)]"
+                />
+              </div>
+            </>
+          )}
+
+          <button
+            type="submit"
+            disabled={status === 'sending' || status === 'sent'}
+            className="mt-2 w-full rounded-full px-7 py-4 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--ink)] shadow-[0_4px_24px_rgba(196,154,74,0.3)] transition-all duration-200 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-90"
+            style={{
+              background:
+                status === 'sent'
+                  ? '#4A7A50'
+                  : status === 'error'
+                    ? '#7A4A4A'
+                    : 'var(--gold)',
+              color: status === 'sent' || status === 'error' ? 'var(--cream)' : 'var(--ink)',
+            }}
+          >
+            {buttonLabel}
+          </button>
+
+          {status === 'error' && (
+            <p className="text-center text-[11px] text-[rgba(242,237,227,0.7)]">
+              {errorMessage ?? 'Something went wrong.'} Please email{' '}
+              <a
+                href="mailto:trade@bernardourbina.com"
+                className="text-[var(--gold)] underline-offset-2 hover:underline"
+              >
+                trade@bernardourbina.com
+              </a>{' '}
+              instead.
+            </p>
+          )}
+        </form>
+      </div>
     </section>
+  );
+}
+
+function NextSteps() {
+  return (
+    <div>
+      <div className="mb-8 text-[11px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
+        What happens next
+      </div>
+      <ol className="space-y-7">
+        {NEXT_STEPS.map((step) => (
+          <li key={step.n} className="grid grid-cols-[auto_1fr] gap-5">
+            <div className="font-[family-name:var(--font-cormorant)] text-[36px] font-normal leading-[0.85] text-[var(--gold)]">
+              {step.n}
+            </div>
+            <div>
+              <h3 className="mb-1.5 font-[family-name:var(--font-cormorant)] text-[22px] font-normal leading-none text-[var(--cream)]">
+                {step.title}
+              </h3>
+              <p className="text-[13px] font-normal leading-[1.75] text-[rgba(242,237,227,0.85)] md:text-[14px]">
+                {step.body}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
   );
 }
 
