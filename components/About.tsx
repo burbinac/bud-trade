@@ -25,9 +25,9 @@ export function About() {
           province of Costa Rica.
         </p>
         <p className="text-[14px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)] md:text-[15px]">
-          Each slab is kiln-dried twice to US moisture standards, then hand-finished in Laurens,
-          South Carolina. Bernardo oversees every commission from slab selection to delivery, so
-          the piece that arrives is the piece he chose.
+          Each slab is kiln-dried twice to US moisture standards, then hand-finished in South
+          Carolina. Bernardo oversees every commission from slab selection to delivery, so the
+          piece that arrives is the piece he chose.
         </p>
       </div>
     </section>

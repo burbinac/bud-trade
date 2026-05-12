@@ -12,12 +12,12 @@ const TILES = [
   {
     n: 'Delivery',
     title: 'Quoted Separately',
-    body: 'White-glove freight (ArcBest or Plycon) available on quote, or use your own preferred delivery partner from Laurens, SC.',
+    body: 'White-glove freight (ArcBest or Plycon) available on quote, or use your own preferred delivery partner from South Carolina.',
   },
   {
     n: '13–15',
     title: 'Week Production',
-    body: 'Commission to ship-ready, from the Laurens workshop. Delivery scheduled separately once the piece is finished.',
+    body: 'Commission to ship-ready, from the South Carolina workshop. Delivery scheduled separately once the piece is finished.',
   },
 ];
 

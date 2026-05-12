@@ -51,21 +51,21 @@ const GROUPS: CountryGroup[] = [
       {
         n: '04',
         title: 'Re-Kiln',
-        location: 'Laurens, SC',
+        location: 'South Carolina',
         body: 'iDry vacuum kiln calibrated to US interior moisture. From Aspen winter to Miami humidity, the slab holds stable — moisture measured and recorded for every piece.',
         image: '/process/rekiln.jpg',
       },
       {
         n: '05',
         title: 'Finish',
-        location: 'Laurens, SC',
+        location: 'South Carolina',
         body: '120-grit sanding, then 1K clear satin polyurethane — commercial-grade for chef’s tables, hotel lobbies, boardrooms. Every piece signed, numbered, and photographed before shipping.',
         image: '/process/finish.jpg',
       },
       {
         n: '06',
         title: 'Ship',
-        location: 'From Laurens, SC',
+        location: 'From South Carolina',
         body: 'White-glove freight on quote — ArcBest, Plycon, or your preferred carrier. CAFTA-DR duty-free, room of choice, packaging removed on site.',
       },
     ],
@@ -85,7 +85,7 @@ export function Process() {
 
       <div className="mx-auto max-w-[820px] px-6 pb-10 text-center sm:px-10">
         <p className="text-[15px] font-normal leading-[1.7] text-[rgba(242,237,227,0.9)] md:text-[16px]">
-          From the forest in Guanacaste to the Laurens workshop —
+          From the forest in Guanacaste to the South Carolina workshop —
           <span className="text-[var(--gold)]"> thirteen to fifteen weeks of production, six stages, one person overseeing every one.</span>
         </p>
       </div>

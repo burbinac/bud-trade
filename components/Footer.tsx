@@ -12,8 +12,7 @@ export function Footer() {
             Bernardo Urbina Design
           </div>
           <p className="max-w-[260px] text-[12px] font-normal leading-[1.8] text-[rgba(242,237,227,0.7)]">
-            One-of-a-kind dining tables in Costa Rican hardwood, finished in Laurens, South
-            Carolina.
+            One-of-a-kind dining tables in Costa Rican hardwood, finished in South Carolina.
           </p>
         </div>
 
@@ -70,7 +69,7 @@ export function Footer() {
           </div>
           <ul className="flex flex-col gap-2.5 text-[12px] font-normal text-[rgba(242,237,227,0.85)]">
             <li>Guanacaste, Costa Rica</li>
-            <li>Laurens, South Carolina</li>
+            <li>South Carolina</li>
           </ul>
         </div>
       </div>

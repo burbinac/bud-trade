@@ -24,7 +24,7 @@ const NEXT_STEPS = [
   {
     n: '03',
     title: 'Commission',
-    body: 'A 50% deposit secures the slab. Bernardo signs the spec sheet, and the piece enters the 13–15 week production schedule in Laurens.',
+    body: 'A 50% deposit secures the slab. Bernardo signs the spec sheet, and the piece enters the 13–15 week production schedule in South Carolina.',
   },
   {
     n: '04',
