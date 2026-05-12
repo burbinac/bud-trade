@@ -115,128 +115,147 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
           <div className="mb-8 text-[11px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
             Your details
           </div>
-          <form className="flex flex-1 flex-col gap-4 text-left" onSubmit={handleSubmit} noValidate>
-          <div className="absolute -left-[9999px]" aria-hidden="true">
-            <label>
-              Website
-              <input
-                type="text"
-                name="company_website"
-                tabIndex={-1}
-                autoComplete="off"
-              />
-            </label>
-          </div>
-
-          <Field
-            label="Work Email"
-            name="email"
-            type="email"
-            placeholder="you@studio.com"
-            required
-          />
-          <Field label="Firm / Studio" name="firm" placeholder="Your studio name" required />
-
-          <div className="flex flex-col gap-2">
-            <label htmlFor="slab" className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
-              Slab of interest
-            </label>
-            <select
-              id="slab"
-              name="slab"
-              value={selectedSlab}
-              onChange={(e) => onSlabChange(e.target.value)}
-              className="appearance-none rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors focus:border-[var(--gold)]"
-            >
-              <option value="">— Full catalog (all nine slabs)</option>
-              {SLABS.map((s) => (
-                <option key={s.slug} value={s.name}>
-                  {s.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {!showOptional && (
-            <button
-              type="button"
-              onClick={() => setShowOptional(true)}
-              className="self-center text-[10px] font-normal uppercase tracking-[0.22em] text-[rgba(242,237,227,0.6)] transition-colors hover:text-[var(--gold)]"
-            >
-              + Add project details (optional)
-            </button>
-          )}
-
-          {showOptional && (
-            <>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <Field label="First Name" name="firstName" placeholder="First" />
-                <Field label="Last Name" name="lastName" placeholder="Last" />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="context" className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
-                  Project context
-                </label>
-                <textarea
-                  id="context"
-                  name="context"
-                  placeholder="Residential, hospitality, timeline…"
-                  rows={3}
-                  className="min-h-[88px] resize-y rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors placeholder:text-[rgba(242,237,227,0.3)] focus:border-[var(--gold)]"
+          <form className="flex flex-1 flex-col gap-7 text-left" onSubmit={handleSubmit} noValidate>
+            <div className="absolute -left-[9999px]" aria-hidden="true">
+              <label>
+                Website
+                <input
+                  type="text"
+                  name="company_website"
+                  tabIndex={-1}
+                  autoComplete="off"
                 />
-              </div>
-            </>
-          )}
-
-          <button
-            type="submit"
-            disabled={status === 'sending' || status === 'sent'}
-            className="mt-2 w-full rounded-full px-7 py-4 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--ink)] shadow-[0_4px_24px_rgba(196,154,74,0.3)] transition-all duration-200 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-90"
-            style={{
-              background:
-                status === 'sent'
-                  ? '#4A7A50'
-                  : status === 'error'
-                    ? '#7A4A4A'
-                    : 'var(--gold)',
-              color: status === 'sent' || status === 'error' ? 'var(--cream)' : 'var(--ink)',
-            }}
-          >
-            {buttonLabel}
-          </button>
-
-          {status === 'error' && (
-            <p className="text-center text-[11px] text-[rgba(242,237,227,0.7)]">
-              {errorMessage ?? 'Something went wrong.'} Please email{' '}
-              <a
-                href="mailto:trade@bernardourbina.com"
-                className="text-[var(--gold)] underline-offset-2 hover:underline"
-              >
-                trade@bernardourbina.com
-              </a>{' '}
-              instead.
-            </p>
-          )}
-          </form>
-
-          {/* Alternative contact path — fills the column bottom with useful content */}
-          <div className="mt-auto border-t border-[var(--gold-dim)] pt-7">
-            <div className="mb-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
-              Prefer to email directly?
+              </label>
             </div>
-            <a
-              href="mailto:trade@bernardourbina.com"
-              className="font-[family-name:var(--font-cormorant)] text-[20px] font-normal text-[var(--cream)] transition-colors hover:text-[var(--gold)]"
-            >
-              trade@bernardourbina.com
-            </a>
-            <p className="mt-2 text-[12px] font-normal leading-[1.7] text-[rgba(242,237,227,0.7)]">
-              Bernardo replies personally within one business day.
-            </p>
-          </div>
+
+            <NumberedRow n="01">
+              <Field
+                label="Work Email"
+                name="email"
+                type="email"
+                placeholder="you@studio.com"
+                required
+              />
+            </NumberedRow>
+
+            <NumberedRow n="02">
+              <Field label="Firm / Studio" name="firm" placeholder="Your studio name" required />
+            </NumberedRow>
+
+            <NumberedRow n="03">
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="slab" className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
+                    Slab of interest
+                  </label>
+                  <select
+                    id="slab"
+                    name="slab"
+                    value={selectedSlab}
+                    onChange={(e) => onSlabChange(e.target.value)}
+                    className="appearance-none rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors focus:border-[var(--gold)]"
+                  >
+                    <option value="">— Full catalog (all nine slabs)</option>
+                    {SLABS.map((s) => (
+                      <option key={s.slug} value={s.name}>
+                        {s.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {!showOptional && (
+                  <button
+                    type="button"
+                    onClick={() => setShowOptional(true)}
+                    className="self-start text-[10px] font-normal uppercase tracking-[0.22em] text-[rgba(242,237,227,0.6)] transition-colors hover:text-[var(--gold)]"
+                  >
+                    + Add project details (optional)
+                  </button>
+                )}
+
+                {showOptional && (
+                  <>
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      <Field label="First Name" name="firstName" placeholder="First" />
+                      <Field label="Last Name" name="lastName" placeholder="Last" />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="context" className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
+                        Project context
+                      </label>
+                      <textarea
+                        id="context"
+                        name="context"
+                        placeholder="Residential, hospitality, timeline…"
+                        rows={3}
+                        className="min-h-[88px] resize-y rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors placeholder:text-[rgba(242,237,227,0.3)] focus:border-[var(--gold)]"
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+            </NumberedRow>
+
+            <NumberedRow n="04">
+              <div className="flex flex-col gap-3">
+                <button
+                  type="submit"
+                  disabled={status === 'sending' || status === 'sent'}
+                  className="w-full rounded-full px-7 py-4 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--ink)] shadow-[0_4px_24px_rgba(196,154,74,0.3)] transition-all duration-200 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-90"
+                  style={{
+                    background:
+                      status === 'sent'
+                        ? '#4A7A50'
+                        : status === 'error'
+                          ? '#7A4A4A'
+                          : 'var(--gold)',
+                    color: status === 'sent' || status === 'error' ? 'var(--cream)' : 'var(--ink)',
+                  }}
+                >
+                  {buttonLabel}
+                </button>
+
+                <p className="text-[11px] font-normal leading-[1.6] text-[rgba(242,237,227,0.65)]">
+                  Or email Bernardo directly at{' '}
+                  <a
+                    href="mailto:trade@bernardourbina.com"
+                    className="text-[var(--gold)] underline-offset-2 hover:underline"
+                  >
+                    trade@bernardourbina.com
+                  </a>
+                  . He replies personally within one business day.
+                </p>
+              </div>
+            </NumberedRow>
+
+            {status === 'error' && (
+              <p className="text-center text-[11px] text-[rgba(242,237,227,0.7)]">
+                {errorMessage ?? 'Something went wrong.'} Please email{' '}
+                <a
+                  href="mailto:trade@bernardourbina.com"
+                  className="text-[var(--gold)] underline-offset-2 hover:underline"
+                >
+                  trade@bernardourbina.com
+                </a>{' '}
+                instead.
+              </p>
+            )}
+          </form>
         </div>
       </div>
     </section>
+  );
+}
+
+function NumberedRow({ n, children }: { n: string; children: React.ReactNode }) {
+  return (
+    <div className="grid grid-cols-[auto_1fr] items-start gap-5">
+      <div className="font-[family-name:var(--font-cormorant)] text-[36px] font-normal leading-[0.85] text-[var(--gold)]">
+        {n}
+      </div>
+      <div className="min-w-0">{children}</div>
+    </div>
   );
 }
 
