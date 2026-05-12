@@ -152,10 +152,10 @@ function Tile({ step, index }: { step: Step; index: number }) {
             <img
               src={step.image}
               alt={`${step.title} — ${step.location}`}
-              className="absolute inset-0 h-full w-full object-cover [filter:sepia(0.22)_saturate(0.75)_contrast(1.05)_brightness(0.82)]"
+              className="absolute inset-0 h-full w-full object-cover [filter:sepia(0.5)_saturate(0.95)_contrast(1.05)_brightness(0.85)]"
             />
-            {/* Warm gold tone overlay to tie process imagery to brand palette */}
-            <div className="pointer-events-none absolute inset-0 bg-[rgba(196,154,74,0.08)] mix-blend-soft-light" />
+            {/* Warm gold multiply overlay — adds the tungsten/golden-hour warmth */}
+            <div className="pointer-events-none absolute inset-0 bg-[rgba(196,154,74,0.18)] mix-blend-multiply" />
             {/* Bottom gradient for step number legibility */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(8,7,5,0.82)] via-[rgba(8,7,5,0.15)] to-transparent" />
             <div className="absolute bottom-3 left-5 font-[family-name:var(--font-cormorant)] text-[48px] font-normal leading-none text-[var(--cream)] drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)]">
