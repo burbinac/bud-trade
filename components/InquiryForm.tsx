@@ -108,14 +108,14 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-[1fr_1fr] md:gap-16">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_1fr] md:gap-16">
         <NextSteps />
 
-        <div>
+        <div className="flex h-full flex-col">
           <div className="mb-8 text-[11px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
             Your details
           </div>
-          <form className="flex flex-col gap-4 text-left" onSubmit={handleSubmit} noValidate>
+          <form className="flex flex-1 flex-col gap-4 text-left" onSubmit={handleSubmit} noValidate>
           <div className="absolute -left-[9999px]" aria-hidden="true">
             <label>
               Website
@@ -188,10 +188,13 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
             </>
           )}
 
+          {/* Spacer that pushes the submit button to the bottom of the column */}
+          <div className="flex-1" />
+
           <button
             type="submit"
             disabled={status === 'sending' || status === 'sent'}
-            className="mt-2 w-full rounded-full px-7 py-4 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--ink)] shadow-[0_4px_24px_rgba(196,154,74,0.3)] transition-all duration-200 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-90"
+            className="w-full rounded-full px-7 py-4 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--ink)] shadow-[0_4px_24px_rgba(196,154,74,0.3)] transition-all duration-200 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-90"
             style={{
               background:
                 status === 'sent'
