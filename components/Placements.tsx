@@ -10,19 +10,19 @@ const PROJECTS: Project[] = [
     name: 'Iron Wood Hotel',
     city: 'Tacloban',
     country: 'Philippines',
-    detail: 'Slab dining tables for the lobby restaurant.',
+    detail: 'Reception desk and chandelier for the lobby.',
   },
   {
     name: 'Tabacón Thermal Resort',
     city: 'La Fortuna',
     country: 'Costa Rica',
-    detail: 'Chef’s table for the 18-seat private dining room.',
+    detail: 'Reception desk, lounge chairs, and coffee table for the arrival area.',
   },
   {
     name: 'Hotel Preserve Life',
     city: 'Atlanta',
     country: 'USA',
-    detail: 'Boardroom and executive dining — two pieces from the same tree.',
+    detail: 'A 13-foot Guanacaste table with double live-edge drop.',
   },
 ];
 

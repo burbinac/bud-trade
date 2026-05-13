@@ -14,7 +14,7 @@ export function Collection({ onInquire }: Props) {
   return (
     <div className="mx-auto max-w-[1440px] px-6 pb-20 sm:px-10 md:px-12">
       <p className="mx-auto mb-10 max-w-[640px] text-center text-[11px] font-normal italic leading-[1.7] tracking-[0.04em] text-[rgba(242,237,227,0.6)] md:text-[12px]">
-        Tables shown are renderings. Each piece is made on commission — slab photography sent with the spec sheet once a commission begins.
+        Tables shown are renderings. Actual slab photography is included in your spec sheet once we match you to available inventory.
       </p>
       <div className="grid grid-cols-12 gap-6">
         {SLABS.map((slab, i) => (
@@ -117,16 +117,20 @@ function Card({
             <span className="mx-1.5 text-[var(--gold-dim)]">·</span>
             <span>{slab.seats}</span>
           </div>
-          <div className="flex items-center justify-between border-t border-[var(--gold-dim)] pt-4">
-            <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-[rgba(242,237,227,0.9)]">
-              Inquire for pricing
-            </span>
+          <div className="flex flex-col gap-1 border-t border-[var(--gold-dim)] pt-4">
             <button
               type="button"
               onClick={handle}
-              className="inline-flex items-center justify-center rounded-full border border-[rgba(242,237,227,0.3)] bg-transparent px-5 py-2.5 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--cream)] transition-colors hover:border-[var(--gold)] hover:text-[var(--gold)]"
+              className="inline-flex w-full items-center justify-center rounded-full bg-[var(--gold)] px-5 py-3 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--ink)] shadow-[0_4px_20px_rgba(196,154,74,0.2)] transition-opacity hover:opacity-90"
             >
               Request Spec Sheet →
+            </button>
+            <button
+              type="button"
+              onClick={handle}
+              className="inline-flex w-full items-center justify-center px-5 py-2 text-[10px] font-medium uppercase tracking-[0.18em] text-[rgba(242,237,227,0.6)] transition-colors hover:text-[var(--gold)]"
+            >
+              Inquire for Pricing
             </button>
           </div>
         </div>
