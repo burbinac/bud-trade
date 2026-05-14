@@ -18,6 +18,7 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://trade.bernardourbina.com'),
   title: 'Designer Tables — Bernardo Urbina Design',
   description:
     'Nine one-of-a-kind Costa Rican hardwood dining tables. Designed by Bernardo Urbina, finished in the United States, delivered white-glove to site.',
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Bernardo Urbina Design',
+    url: 'https://trade.bernardourbina.com',
   },
   twitter: {
     card: 'summary_large_image',
