@@ -67,6 +67,7 @@ const GROUPS: CountryGroup[] = [
         title: 'Ship',
         location: 'From South Carolina',
         body: 'White-glove freight on quote — ArcBest, Plycon, or your preferred carrier. CAFTA-DR duty-free, room of choice, packaging removed on site.',
+        image: '/process/ship.jpg',
       },
     ],
   },
