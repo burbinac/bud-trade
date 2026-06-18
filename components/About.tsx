@@ -35,7 +35,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="mx-auto grid max-w-[1100px] grid-cols-1 gap-12 border-b border-[var(--gold-dim)] px-6 py-20 sm:px-10 md:grid-cols-[5fr_6fr] md:gap-16 md:px-16 md:py-24 lg:px-[72px]"
+      className="mx-auto grid max-w-[1100px] grid-cols-1 gap-12 px-6 py-20 sm:px-10 md:grid-cols-[5fr_6fr] md:gap-16 md:px-16 md:py-24 lg:px-[72px]"
     >
       <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--ink-2)]">
         <img
