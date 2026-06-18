@@ -11,21 +11,21 @@ const PRESS: PressItem[] = [
   {
     outlet: 'Woodpreneur',
     logo: '/Press/Wood-prenuer.avif',
-    logoClass: 'h-7',
+    logoClass: 'h-11',
     cta: 'Listen to podcast',
     href: 'https://pod.co/the-woodpreneur-podcast-1/bernardo-urbina-costa-rica-mil',
   },
   {
     outlet: 'The New York Times',
     logo: '/Press/NYT_logo2.avif',
-    logoClass: 'h-8',
+    logoClass: 'h-14',
     cta: 'Watch the feature',
     href: 'https://www.nytimes.com/video/multimedia/100000003214365/typhoon-debris-turned-into-furniture.html?playlistId=1194811622186',
   },
   {
     outlet: 'Reuters',
     logo: '/Press/reuters_logo_2.1.webp',
-    logoClass: 'h-7',
+    logoClass: 'h-12',
     cta: 'Read the article',
     href: 'https://www.reuters.com/article/philippines-haiyan-furniture-idINKBN0IQ0ZO20141106/',
   },
@@ -72,16 +72,16 @@ export function About() {
           <div className="mb-6 text-[11px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
             Featured In
           </div>
-          <div className="flex flex-wrap items-start gap-x-10 gap-y-6">
+          <div className="flex flex-wrap items-start gap-x-12 gap-y-7 md:gap-x-16">
             {PRESS.map((item) => (
               <a
                 key={item.outlet}
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col items-start gap-3"
+                className="group flex flex-col items-start gap-4"
               >
-                <span className="flex h-8 items-center">
+                <span className="flex h-14 items-center">
                   <img
                     src={item.logo}
                     alt={`${item.outlet} logo`}
