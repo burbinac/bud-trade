@@ -1,6 +1,6 @@
 export function Intro() {
   return (
-    <section className="mx-auto max-w-[920px] border-b border-[var(--gold-dim)] px-6 pb-14 pt-10 text-center sm:px-10 sm:pt-12 md:px-16 md:pb-20 md:pt-14 lg:px-[72px]">
+    <section className="mx-auto max-w-[920px] px-6 pb-14 pt-10 text-center sm:px-10 sm:pt-12 md:px-16 md:pb-20 md:pt-14 lg:px-[72px]">
       <div className="mb-4 text-[12px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
         The Story
       </div>

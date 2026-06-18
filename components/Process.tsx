@@ -75,7 +75,7 @@ const GROUPS: CountryGroup[] = [
 
 export function Process() {
   return (
-    <section className="border-b border-[var(--gold-dim)] bg-[var(--ink-2)]">
+    <section className="bg-[var(--ink-2)]">
       <div className="mx-auto flex max-w-[1440px] items-center gap-5 px-6 pb-6 pt-14 sm:px-10 md:px-16 md:pt-16 lg:px-[72px]">
         <div className="h-px flex-1 bg-[var(--gold-dim)]" />
         <span className="text-[12px] font-medium uppercase tracking-[0.3em] text-[var(--gold)]">
