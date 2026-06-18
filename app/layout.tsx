@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description:
     'Nine one-of-a-kind Costa Rican hardwood dining tables. Designed by Bernardo Urbina, finished in the United States, delivered white-glove to site.',
   openGraph: {
-    title: 'One Tree. One Table.\nBernardo Urbina Design',
+    title: 'Bernardo Urbina Design',
     description:
       'Nine one-of-a-kind Costa Rican hardwood dining tables. Kiln-dried twice, finished in the U.S. Trade pricing on approval.',
     type: 'website',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'One Tree. One Table.\nBernardo Urbina Design',
+    title: 'Bernardo Urbina Design',
     description:
       'Nine one-of-a-kind Costa Rican hardwood dining tables. Trade pricing on approval.',
   },
