@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og';
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 
 export const alt =
   'One Tree. One Table. — a Bernardo Urbina live-edge slab dining table on a Malibu cliffside at sunset.';
@@ -18,11 +20,13 @@ async function loadCormorant(): Promise<ArrayBuffer> {
 }
 
 export default async function Image() {
-  const [cormorant, heroBytes] = await Promise.all([
+  const [cormorant, heroBytes, markBytes] = await Promise.all([
     loadCormorant(),
     fetch(HERO).then((res) => res.arrayBuffer()),
+    readFile(join(process.cwd(), 'public/bud-mark-white.png')),
   ]);
   const heroSrc = `data:image/jpeg;base64,${Buffer.from(heroBytes).toString('base64')}`;
+  const markSrc = `data:image/png;base64,${Buffer.from(markBytes).toString('base64')}`;
 
   return new ImageResponse(
     (
@@ -53,21 +57,12 @@ export default async function Image() {
               'linear-gradient(to top, rgba(8,7,5,0.9) 0%, rgba(8,7,5,0.2) 46%, rgba(8,7,5,0) 72%)',
           }}
         />
-        <div
-          style={{
-            position: 'absolute',
-            right: 72,
-            bottom: 60,
-            display: 'flex',
-            fontFamily: 'Cormorant',
-            fontSize: 92,
-            fontWeight: 500,
-            lineHeight: 1,
-            color: '#C49A4A',
-          }}
-        >
-          B
-        </div>
+        <img
+          src={markSrc}
+          width={96}
+          height={96}
+          style={{ position: 'absolute', right: 64, bottom: 56 }}
+        />
         <div
           style={{
             position: 'absolute',
