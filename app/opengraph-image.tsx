@@ -23,7 +23,7 @@ export default async function Image() {
   const [cormorant, heroBytes, markBytes] = await Promise.all([
     loadCormorant(),
     fetch(HERO).then((res) => res.arrayBuffer()),
-    readFile(join(process.cwd(), 'public/bud-mark-white.png')),
+    readFile(join(process.cwd(), 'public/bud-mark.png')),
   ]);
   const heroSrc = `data:image/jpeg;base64,${Buffer.from(heroBytes).toString('base64')}`;
   const markSrc = `data:image/png;base64,${Buffer.from(markBytes).toString('base64')}`;
