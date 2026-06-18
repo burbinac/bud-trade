@@ -5,7 +5,9 @@ export function Intro() {
         The Story
       </div>
       <h2 className="mx-auto mb-5 max-w-[760px] font-[family-name:var(--font-cormorant)] text-[clamp(28px,4.5vw,44px)] font-normal leading-[1.2] text-[var(--cream)]">
-        Every slab is a one-of-a-kind piece. No two will ever exist.
+        Every slab is a one-of-a-kind piece.
+        <br />
+        No two will ever exist.
       </h2>
       <p className="mx-auto max-w-[640px] text-[14px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)] md:text-[15px]">
         A fallen tree, decades old, on a farmer&apos;s land in rural Guanacaste. Bernardo
