@@ -5,7 +5,6 @@ import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Intro } from '@/components/Intro';
 import { About } from '@/components/About';
-import { Press } from '@/components/Press';
 import { Process } from '@/components/Process';
 import { SectionLabel } from '@/components/SectionLabel';
 import { Collection } from '@/components/Collection';
@@ -33,7 +32,6 @@ export default function Page() {
       <Collection onInquire={handleInquire} />
       <Placements />
       <About />
-      <Press />
       <Process />
       <SectionLabel id="trade">Trade Program</SectionLabel>
       <TradeProgram />
