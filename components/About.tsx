@@ -6,7 +6,7 @@ export function About() {
     >
       <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--ink-2)]">
         <img
-          src="/bernardo/portrait.png"
+          src="/bernardo/Bernardo_wall.png"
           alt="Bernardo Urbina in his design atelier"
           className="h-full w-full object-cover"
         />
