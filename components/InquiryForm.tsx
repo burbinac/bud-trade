@@ -129,6 +129,13 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
             </div>
 
             <NumberedRow n="01">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <Field label="First Name" name="firstName" placeholder="First" required />
+                <Field label="Last Name" name="lastName" placeholder="Last" required />
+              </div>
+            </NumberedRow>
+
+            <NumberedRow n="02">
               <Field
                 label="Work Email"
                 name="email"
@@ -138,11 +145,11 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
               />
             </NumberedRow>
 
-            <NumberedRow n="02">
+            <NumberedRow n="03">
               <Field label="Firm / Studio" name="firm" placeholder="Your studio name" required />
             </NumberedRow>
 
-            <NumberedRow n="03">
+            <NumberedRow n="04">
               <div className="flex flex-col gap-3">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="slab" className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
@@ -175,29 +182,23 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
                 )}
 
                 {showOptional && (
-                  <>
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                      <Field label="First Name" name="firstName" placeholder="First" />
-                      <Field label="Last Name" name="lastName" placeholder="Last" />
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <label htmlFor="context" className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
-                        Project context
-                      </label>
-                      <textarea
-                        id="context"
-                        name="context"
-                        placeholder="Residential, hospitality, timeline…"
-                        rows={3}
-                        className="min-h-[88px] resize-y rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors placeholder:text-[rgba(242,237,227,0.3)] focus:border-[var(--gold)]"
-                      />
-                    </div>
-                  </>
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="context" className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
+                      Project context
+                    </label>
+                    <textarea
+                      id="context"
+                      name="context"
+                      placeholder="Residential, hospitality, timeline…"
+                      rows={3}
+                      className="min-h-[88px] resize-y rounded-lg border border-[var(--gold-dim)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-[13px] font-normal text-[var(--cream)] outline-none transition-colors placeholder:text-[rgba(242,237,227,0.3)] focus:border-[var(--gold)]"
+                    />
+                  </div>
                 )}
               </div>
             </NumberedRow>
 
-            <NumberedRow n="04">
+            <NumberedRow n="05">
               <div className="flex flex-col gap-3">
                 <button
                   type="submit"

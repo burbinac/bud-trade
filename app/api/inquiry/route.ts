@@ -136,8 +136,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
   }
 
-  // Name is optional in the form (only Work Email + Firm are required), so it
-  // must be optional here too — otherwise normal submits get a silent 400.
   const firstName = body.firstName?.trim() || '';
   const lastName = body.lastName?.trim() || '';
   const firm = body.firm?.trim();
@@ -148,7 +146,8 @@ export async function POST(req: Request) {
   const context = body.context?.trim() || '';
   const fullName = [firstName, lastName].filter(Boolean).join(' ');
 
-  if (!firm || !email) {
+  // First name, last name, firm, and email are all required and visible.
+  if (!firstName || !lastName || !firm || !email) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
   }
   if (!EMAIL_RE.test(email)) {
