@@ -2,13 +2,21 @@
 // (app.bernardourbina.com). The dashboard owns all storage; bud-trade just
 // sends events. Never throws — a dashboard outage must not break inquiries.
 
-// Ingest endpoint. INGEST_URL may be the base host or the full path — we
-// normalize either to the full …/api/trade/ingest endpoint.
+// Ingest endpoint. We only trust the HOST of INGEST_URL and always use the
+// correct /api/trade/ingest path — so even if INGEST_URL points at a different
+// route (e.g. the facturas ingest), we still hit the right trade endpoint.
 const INGEST_PATH = '/api/trade/ingest';
-const ingestBase = (process.env.INGEST_URL ?? 'https://app.bernardourbina.com').replace(/\/+$/, '');
-const INGEST_ENDPOINT = ingestBase.endsWith(INGEST_PATH)
-  ? ingestBase
-  : `${ingestBase}${INGEST_PATH}`;
+function resolveIngestEndpoint(): string {
+  const fallbackOrigin = 'https://app.bernardourbina.com';
+  const raw = process.env.INGEST_URL;
+  if (!raw) return fallbackOrigin + INGEST_PATH;
+  try {
+    return new URL(raw).origin + INGEST_PATH;
+  } catch {
+    return fallbackOrigin + INGEST_PATH;
+  }
+}
+const INGEST_ENDPOINT = resolveIngestEndpoint();
 
 type TradeEvent =
   | {
