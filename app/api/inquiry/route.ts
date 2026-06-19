@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { SLABS } from '@/lib/slabs';
+import { signCatalogToken, CATALOG_FILE } from '@/lib/catalog-token';
 
 type Body = {
   firstName?: string;
@@ -14,17 +15,19 @@ type Body = {
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const CATALOG_LABEL = 'Full catalog (all nine slabs)';
-const CATALOG_URL = 'https://trade.bernardourbina.com/trade-collection-2026.html';
+const SITE_URL = 'https://trade.bernardourbina.com';
 
 /** Warm, per-table auto-reply sent to the person who inquired. */
 function buildCustomerEmail({
   firstName,
   slabName,
   essence,
+  catalogUrl,
 }: {
   firstName: string;
   slabName: string | null;
   essence: string | null;
+  catalogUrl: string;
 }): { subject: string; html: string; text: string } {
   const subject = slabName
     ? `${slabName} — your trade inquiry`
@@ -46,7 +49,7 @@ function buildCustomerEmail({
     opening,
     '',
     'The full Trade Collection — all nine one-of-a-kind tables, with dimensions, character, and pricing — is ready for you now:',
-    CATALOG_URL,
+    catalogUrl,
     '',
     'When a piece speaks to you, reply with your project — the room, your timeline, and the table you’re drawn to — and Bernardo will match you to available inventory.',
     '',
@@ -95,7 +98,7 @@ function buildCustomerEmail({
                 <p style="margin:0 0 18px 0;font-size:15px;color:${ink};line-height:1.7;">Dear ${firstName},</p>
                 <p style="margin:0 0 18px 0;font-size:15px;color:${ink};line-height:1.7;">${opening}</p>
                 <p style="margin:0 0 22px 0;font-size:15px;color:${ink};line-height:1.7;">The full Trade Collection — all nine one-of-a-kind tables, with dimensions, character, and pricing — is ready for you now.</p>
-                <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 26px 0;"><tr><td style="background:${gold};border-radius:999px;"><a href="${CATALOG_URL}" style="display:inline-block;padding:14px 32px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#1A1815;text-decoration:none;border-radius:999px;">View the Trade Collection</a></td></tr></table>
+                <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 26px 0;"><tr><td style="background:${gold};border-radius:999px;"><a href="${catalogUrl}" style="display:inline-block;padding:14px 32px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#1A1815;text-decoration:none;border-radius:999px;">View the Trade Collection</a></td></tr></table>
                 <p style="margin:0 0 28px 0;font-size:15px;color:${ink};line-height:1.7;">When a piece speaks to you, reply with your project — the room, your timeline, and the table you’re drawn to — and Bernardo will match you to available inventory.</p>
                 <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:${gold};margin-bottom:14px;">What happens next</div>
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${stepsHtml}</table>
@@ -185,10 +188,14 @@ export async function POST(req: Request) {
   // Best-effort auto-reply to the customer, personalized to the chosen table.
   // A failure here must not fail the request — the internal notification already sent.
   try {
+    // Per-lead tracked catalog link; falls back to the raw file if unsigned.
+    const token = signCatalogToken({ firstName, lastName, firm, email, slab: rawSlab });
+    const catalogUrl = token ? `${SITE_URL}/c/${token}` : `${SITE_URL}${CATALOG_FILE}`;
     const customer = buildCustomerEmail({
       firstName,
       slabName: matched?.name ?? null,
       essence: matched?.essence ?? null,
+      catalogUrl,
     });
     const { error } = await resend.emails.send({
       from: sender,
