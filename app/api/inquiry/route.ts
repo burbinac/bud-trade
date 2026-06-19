@@ -39,6 +39,8 @@ function buildCustomerEmail({
     ? `Thank you for your interest in ${slabName}.${essence ? ` ${essence}` : ''}`
     : 'Thank you for requesting the Trade Collection.';
 
+  const greeting = firstName ? `Dear ${firstName},` : 'Hello,';
+
   const steps = [
     'We match you to available inventory and send the full spec sheet — actual photography of the slab being considered, base options, and design details — for your sign-off before any commission begins.',
     'A 50% deposit secures the slab.',
@@ -46,7 +48,7 @@ function buildCustomerEmail({
   ];
 
   const text = [
-    `Dear ${firstName},`,
+    greeting,
     '',
     opening,
     '',
@@ -97,7 +99,7 @@ function buildCustomerEmail({
             </tr>
             <tr>
               <td style="padding:0 36px;">
-                <p style="margin:0 0 18px 0;font-size:15px;color:${ink};line-height:1.7;">Dear ${firstName},</p>
+                <p style="margin:0 0 18px 0;font-size:15px;color:${ink};line-height:1.7;">${greeting}</p>
                 <p style="margin:0 0 18px 0;font-size:15px;color:${ink};line-height:1.7;">${opening}</p>
                 <p style="margin:0 0 22px 0;font-size:15px;color:${ink};line-height:1.7;">The full Trade Collection — all nine one-of-a-kind tables, with dimensions, character, and pricing — is ready for you now.</p>
                 <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 26px 0;"><tr><td style="background:${gold};border-radius:999px;"><a href="${catalogUrl}" style="display:inline-block;padding:14px 32px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#1A1815;text-decoration:none;border-radius:999px;">View the Trade Collection</a></td></tr></table>
@@ -134,16 +136,19 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
   }
 
-  const firstName = body.firstName?.trim();
-  const lastName = body.lastName?.trim();
+  // Name is optional in the form (only Work Email + Firm are required), so it
+  // must be optional here too — otherwise normal submits get a silent 400.
+  const firstName = body.firstName?.trim() || '';
+  const lastName = body.lastName?.trim() || '';
   const firm = body.firm?.trim();
   const email = body.email?.trim();
   const rawSlab = body.slab?.trim() || '';
   const matched = rawSlab ? SLABS.find((s) => s.name === rawSlab) ?? null : null;
   const slab = rawSlab || CATALOG_LABEL;
   const context = body.context?.trim() || '';
+  const fullName = [firstName, lastName].filter(Boolean).join(' ');
 
-  if (!firstName || !lastName || !firm || !email) {
+  if (!firm || !email) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
   }
   if (!EMAIL_RE.test(email)) {
@@ -163,9 +168,11 @@ export async function POST(req: Request) {
   const resend = new Resend(apiKey);
   const extRef = randomUUID();
 
-  const subject = `Trade inquiry — ${firstName} ${lastName} (${firm})`;
+  const subject = fullName
+    ? `Trade inquiry — ${fullName} (${firm})`
+    : `Trade inquiry — ${firm}`;
   const text = [
-    `Name: ${firstName} ${lastName}`,
+    `Name: ${fullName || '(not provided)'}`,
     `Firm: ${firm}`,
     `Email: ${email}`,
     `Slab of interest: ${slab}`,
