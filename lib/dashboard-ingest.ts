@@ -23,16 +23,31 @@ type TradeEvent =
     }
   | { type: 'open'; extRef: string };
 
-export async function postTradeEvent(event: TradeEvent): Promise<void> {
+export type IngestDiag = {
+  configured: boolean;
+  endpoint: string;
+  status?: number;
+  body?: string;
+  error?: string;
+};
+
+export async function postTradeEvent(event: TradeEvent): Promise<IngestDiag> {
   const key = process.env.INGEST_API_KEY;
-  if (!key) return; // not configured yet → skip silently
+  if (!key) return { configured: false, endpoint: INGEST_ENDPOINT };
   try {
-    await fetch(INGEST_ENDPOINT, {
+    const res = await fetch(INGEST_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'X-API-KEY': key },
       body: JSON.stringify(event),
     });
+    let body = '';
+    try {
+      body = (await res.text()).slice(0, 200);
+    } catch {
+      /* ignore */
+    }
+    return { configured: true, endpoint: INGEST_ENDPOINT, status: res.status, body };
   } catch (err) {
-    console.error('[trade-ingest] failed', err);
+    return { configured: true, endpoint: INGEST_ENDPOINT, error: String(err) };
   }
 }

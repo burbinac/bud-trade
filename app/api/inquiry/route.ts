@@ -220,7 +220,7 @@ export async function POST(req: Request) {
   }
 
   // Best-effort: record the inquiry in the dashboard (USA trade pipeline).
-  await postTradeEvent({
+  const ingestDiag = await postTradeEvent({
     type: 'inquiry',
     extRef,
     firstName,
@@ -231,5 +231,10 @@ export async function POST(req: Request) {
     context: context || null,
   });
 
+  // Temporary diagnostic: surface the dashboard-ingest outcome only when an
+  // x-debug:1 header is sent. Remove once the feed is confirmed.
+  if (req.headers.get('x-debug') === '1') {
+    return NextResponse.json({ ok: true, ingest: ingestDiag });
+  }
   return NextResponse.json({ ok: true });
 }
