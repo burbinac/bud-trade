@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { SLABS } from '@/lib/slabs';
 import { signCatalogToken, CATALOG_FILE } from '@/lib/catalog-token';
+import { postTradeEvent } from '@/lib/dashboard-ingest';
+import { randomUUID } from 'node:crypto';
 
 type Body = {
   firstName?: string;
@@ -159,6 +161,7 @@ export async function POST(req: Request) {
   }
 
   const resend = new Resend(apiKey);
+  const extRef = randomUUID();
 
   const subject = `Trade inquiry — ${firstName} ${lastName} (${firm})`;
   const text = [
@@ -189,7 +192,7 @@ export async function POST(req: Request) {
   // A failure here must not fail the request — the internal notification already sent.
   try {
     // Per-lead tracked catalog link; falls back to the raw file if unsigned.
-    const token = signCatalogToken({ firstName, lastName, firm, email, slab: rawSlab });
+    const token = signCatalogToken({ firstName, lastName, firm, email, slab: rawSlab, extRef });
     const catalogUrl = token ? `${SITE_URL}/c/${token}` : `${SITE_URL}${CATALOG_FILE}`;
     const customer = buildCustomerEmail({
       firstName,
@@ -209,6 +212,18 @@ export async function POST(req: Request) {
   } catch (err) {
     console.error('[inquiry] Resend error (customer auto-reply)', err);
   }
+
+  // Best-effort: record the inquiry in the dashboard (USA trade pipeline).
+  await postTradeEvent({
+    type: 'inquiry',
+    extRef,
+    firstName,
+    lastName,
+    firm,
+    email,
+    slab: rawSlab || null,
+    context: context || null,
+  });
 
   return NextResponse.json({ ok: true });
 }

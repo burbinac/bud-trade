@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { verifyCatalogToken } from '@/lib/catalog-token';
+import { postTradeEvent } from '@/lib/dashboard-ingest';
 
 // Receives the JS beacon from /c/<token>, decrypts the lead, and emails a
 // "hot lead opened the catalog" alert to the trade inbox. Always returns ok —
@@ -16,6 +17,9 @@ export async function POST(req: Request) {
 
   const lead = verifyCatalogToken(t);
   if (!lead) return NextResponse.json({ ok: true });
+
+  // Best-effort: record the open in the dashboard (increments opens count).
+  await postTradeEvent({ type: 'open', extRef: lead.extRef });
 
   const apiKey = process.env.RESEND_API_KEY;
   const inbox = process.env.TRADE_INBOX;

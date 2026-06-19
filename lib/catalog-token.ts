@@ -10,6 +10,7 @@ export type LeadPayload = {
   firm: string;
   email: string;
   slab: string;
+  extRef: string;
 };
 
 // Derive a 32-byte key from the Resend key so we don't need a separate secret.
