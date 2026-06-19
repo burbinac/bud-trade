@@ -15,14 +15,21 @@ export async function GET(
 <head>
 <meta charset="utf-8" />
 <meta name="robots" content="noindex,nofollow" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=900" />
 <title>Bernardo Urbina Design — Trade Collection</title>
-<style>html,body{margin:0;height:100%;background:#0F0E0C}iframe{border:0;width:100%;height:100vh;display:block}</style>
+<style>html,body{margin:0;background:#0F0E0C}#cat{display:block;width:900px;margin:0 auto;border:0;height:100vh}</style>
 </head>
 <body>
-<iframe src="${CATALOG_FILE}" title="Bernardo Urbina Design — Trade Collection"></iframe>
+<iframe id="cat" src="${CATALOG_FILE}" title="Bernardo Urbina Design — Trade Collection"></iframe>
 <script>
 (function(){
+  var f=document.getElementById('cat');
+  // Size the iframe to its full content so the page scrolls (not the iframe),
+  // and the width=900 viewport scales the whole thing to fit phones.
+  function fit(){ try{ var d=f.contentWindow.document; f.style.height=(d.documentElement.scrollHeight||d.body.scrollHeight)+'px'; }catch(e){} }
+  f.addEventListener('load', function(){ fit(); setTimeout(fit, 400); });
+  // Beacon an "opened" event after a few seconds of real viewing. Email
+  // scanners fetch the URL but don't run JS or linger, so no false positives.
   var t=${t};
   try{ if(sessionStorage.getItem('bud_opened'))return; }catch(e){}
   setTimeout(function(){
