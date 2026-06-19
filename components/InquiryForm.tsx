@@ -103,8 +103,8 @@ export function InquiryForm({ selectedSlab, onSlabChange }: Props) {
           Request Spec Sheets
         </h2>
         <p className="mx-auto max-w-md text-[14px] font-normal leading-[1.9] text-[rgba(242,237,227,0.85)]">
-          The 12-page trade catalog arrives within one business day — and here&apos;s what
-          happens after that.
+          The full trade catalog lands in your inbox the moment you submit — and here&apos;s
+          what happens after that.
         </p>
       </div>
 
